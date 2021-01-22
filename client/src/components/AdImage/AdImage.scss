@@ -1,0 +1,17 @@
+.ad-image {
+    border-radius:  0 !important;
+    cursor: pointer;
+    width: auto;
+    height: auto;
+    
+}
+
+.pupup-header {
+    border: none;
+    button.close {
+        padding: 0.5rem 1.5rem 0 0;
+    }
+    span[aria-hidden = true]{
+        font-size: 3.5rem;
+    }
+}

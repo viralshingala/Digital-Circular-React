@@ -1,0 +1,24 @@
+{
+  "tests": "./*_test.js",
+  "timeout": 10000,
+  "output": "./results",
+  "helpers": {
+    "Puppeteer": {
+      "url": "http://localhost",
+      "waitForNavigation": "networkidle0",
+      "show": true,
+      "restart": false,
+      "waitForAction": 1000,
+      "chrome": {
+        "defaultViewport": {
+          "width": 1240,
+          "height": 800
+        }
+      }      
+    }
+  },
+  "include": {},
+  "bootstrap": false,
+  "mocha": {},
+  "name": "axonbridge"
+}

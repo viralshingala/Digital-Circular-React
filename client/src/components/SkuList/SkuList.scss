@@ -1,0 +1,32 @@
+.sku-list {
+    .offer-msg {
+        font-size: 1.8em;
+        font-weight: 700;
+        line-height: 2.8rem !important;
+        font-family: 'ProximaNova-A-Black';
+        color: #003b49 !important;
+    }
+    p {
+        margin-bottom: 5px;
+    }
+    .btn-primary {
+        background-color: #007DB4;
+        border-radius: 0;
+        max-width: 135px;
+        padding: 16px;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    .btn-secondary {
+        background-color: #4A4A4A;
+        border-radius: 0;
+        max-width: 135px;
+        padding: 16px;
+        &:hover {
+            text-decoration: underline;
+        }
+        margin-right: 2%;
+    }
+}
+
