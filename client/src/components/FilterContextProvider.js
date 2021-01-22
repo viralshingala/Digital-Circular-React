@@ -1,7 +1,7 @@
 import React, { useReducer, createContext } from 'react'
 import { ALL, LOCAL } from '../utils/appConstants'
 
-export const FilterContext = createContext()
+export const FilterContext = React.createContext([{}, function () {}])
 
 const initialState = {
 	filter: ALL,
