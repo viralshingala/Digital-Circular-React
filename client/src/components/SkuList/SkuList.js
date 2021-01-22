@@ -1,5 +1,4 @@
 import React from 'react'
-import { Button, Col, Row } from 'react-bootstrap'
 import URL_CONFIG from '../../data/urlConfig'
 import { FIND_A_STORE, BUY_ONLINE } from '../../utils/appConstants'
 import { getTokenKey } from '../../utils/utility'
@@ -7,12 +6,9 @@ import './SkuList.scss'
 
 export const SkuList = ({ list }) => {
 	const renderBtn = ({ navigation, type }) => {
-		const popUpBtnUrl = window.location.href.slice(0,-10)+navigation
+		const popUpBtnUrl = window.location.href.slice(0, -10) + navigation
 		const onClick = () => {
-		window.open(
-			popUpBtnUrl,
-				'_blank' 
-			  );
+			window.open(popUpBtnUrl, '_blank')
 		}
 
 		switch (type) {

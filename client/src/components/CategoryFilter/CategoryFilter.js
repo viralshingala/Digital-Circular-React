@@ -1,5 +1,4 @@
 import React, { useContext, useState } from 'react'
-import { Dropdown, FormControl } from 'react-bootstrap'
 import { getTokenKey, categoryFilterSorting } from '../../utils/utility'
 import { ALL } from '../../utils/appConstants'
 import './CategoryFilter.scss'

@@ -1,6 +1,5 @@
 import React from 'react'
 import Grid from '@material-ui/core/Grid'
-import { Col } from 'react-bootstrap'
 import { getTokenKey } from '../../utils/utility'
 import AdImage from '../AdImage'
 import './FullWidth.scss'
