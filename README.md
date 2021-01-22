@@ -1,6 +1,3 @@
-# ![Security Logo](https://s7d2.scene7.com/is/image/PetSmart/petsmart-logo?fmt=png-alpha)
-
-# [![Build Status](https://dev.azure.com/petm-webdev/WebDev/_apis/build/status/WebDev)](https://dev.azure.com/petm-webdev/WebDev/_build/latest?definitionId=2)
 
 ## Development Preparation
 
