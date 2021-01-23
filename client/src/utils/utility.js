@@ -13,3 +13,9 @@ export const categoryFilterSorting = {
 	Events: 7,
 	All: 8
 }
+
+export const btnNavigationPriority = {
+	bookNow: 0,
+	buyOnline: 1,
+	findStore: 2
+}

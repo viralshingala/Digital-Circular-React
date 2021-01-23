@@ -4,19 +4,18 @@
     }
 }
 .ad-image-card {
-    border-radius:  0 !important;
+    border-radius: 0 !important;
     .ad-image {
         cursor: pointer;
     }
-    
+
     .pupup-header {
         border: none;
         button.close {
             padding: 0.5rem 1.5rem 0 0;
         }
-        span[aria-hidden = true]{
+        span[aria-hidden="true"] {
             font-size: 3.5rem;
         }
     }
 }
-

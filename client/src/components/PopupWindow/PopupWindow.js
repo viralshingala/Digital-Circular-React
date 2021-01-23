@@ -1,13 +1,53 @@
-import React from 'react'
-import classNames from 'classnames'
+import React, { useEffect } from 'react'
+import { withStyles } from '@material-ui/core/styles'
+import Button from '@material-ui/core/Button'
+import Dialog from '@material-ui/core/Dialog'
+import MuiDialogTitle from '@material-ui/core/DialogTitle'
+import MuiDialogContent from '@material-ui/core/DialogContent'
+import MuiDialogActions from '@material-ui/core/DialogActions'
+import IconButton from '@material-ui/core/IconButton'
+import CloseIcon from '@material-ui/icons/Close'
 
-import './PopupWindow.scss'
+const styles = (theme) => ({
+	root: {
+		margin: 0,
+		padding: theme.spacing(2)
+	},
+	closeButton: {
+		position: 'absolute',
+		right: theme.spacing(1),
+		top: theme.spacing(1),
+		color: theme.palette.grey[500]
+	}
+})
 
-export const PopupWindow = ({ show, onHide, children, ...other }) => {
+const DialogTitle = withStyles(styles)((props) => {
+	const { children, classes, onClose, ...other } = props
 	return (
-		<Modal show={show} onHide={onHide} animation={false} {...other}>
-			<Modal.Header className={classNames('pupup-header', 'p-0')} closeButton></Modal.Header>
-			<Modal.Body>{children}</Modal.Body>
-		</Modal>
+		<MuiDialogTitle disableTypography className={classes.root} {...other}>
+			{onClose ? (
+				<IconButton aria-label='close' className={classes.closeButton} onClick={onClose}>
+					<CloseIcon />
+				</IconButton>
+			) : null}
+		</MuiDialogTitle>
+	)
+})
+
+const DialogContent = withStyles((theme) => ({
+	root: {
+		padding: theme.spacing(2)
+	}
+}))(MuiDialogContent)
+
+export const PopupWindow = ({ open, onClose, children, ...other }) => {
+	useEffect(() => {
+		document.querySelector('body').style.overflow = 'auto!important'
+	})
+	return (
+		<Dialog onClose={onClose} aria-labelledby='customized-dialog-title' open={open}>
+			<DialogTitle onClose={onClose} />
+			<DialogContent>{children}</DialogContent>
+		</Dialog>
 	)
 }
