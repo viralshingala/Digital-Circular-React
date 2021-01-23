@@ -44,8 +44,8 @@ const AD_CONFIG = [
 					disclaimer: 'Offer valid 12/28/20-1/31/21 with Treats™ membership. Discount taken on lowest priced qualifying item(s) purchased. Must be signed in to your Treats account prior to purchase or use Treats membership ID in stores at checkout. Prices & selection may vary by store & online. While supplies last. Mix & match allowed. Excludes WHIMZEES® bulk dental treats, NUTRO™, Greenies® & Pedigree®DENTASTIX™ dog treats.',
 					sku: '5303745',
 					buttonConf: [
-						{ type: 'findStore', navigation: 'https://www.petsmart.com/store-locator/' },
-						{ type: 'buyOnline', navigation: 'https://www.petsmart.com/dog/treats/#page_name=flyout&category=dog&cta=treats' }
+						{ type: 'findStore', navigation: '/store-locator/' },
+						{ type: 'buyOnline', navigation: '/dog/treats/#page_name=flyout&category=dog&cta=treats' }
 					]
 				}
 			]
@@ -59,18 +59,18 @@ const AD_CONFIG = [
 			{
 				imageId: 'US-202101_pg3_ad1',
 				alt: 'dog_image_3-1',
-				navigation: 'https://www.petsmart.com/store-locator/'
+				navigation: '/store-locator/'
 			},
 			[
 				{
 					imageId: 'US-202101_pg3_ad2',
 					alt: 'dog_image_3-2',
-					navigation: 'https://www.petsmart.com/store-locator/'
+					navigation: '/store-locator/'
 				},
 				{
 					imageId: 'US-202101_pg3_ad3',
 					alt: 'dog_image_3-3',
-					navigation: 'https://www.petsmart.com/store-locator/'
+					navigation: '/store-locator/'
 				},
 				{
 					imageId: 'US-202101_pg3_ad4',
@@ -81,7 +81,7 @@ const AD_CONFIG = [
 				{
 					imageId: 'US-202101_pg3_ad5',
 					alt: 'dog_image_3-5',
-					navigation: 'https://www.petsmart.com/store-locator/'
+					navigation: '/store-locator/'
 				},
 				{
 					imageId: 'US-202101_pg3_ad6',
@@ -90,7 +90,7 @@ const AD_CONFIG = [
 				{
 					imageId: 'US-202101_pg3_ad7',
 					alt: 'dog_image_3-7',
-					navigation: 'https://www.petsmart.com/store-locator/'
+					navigation: '/store-locator/'
 				}
 			]
 		]
@@ -103,29 +103,29 @@ const AD_CONFIG = [
 			{
 				imageId: 'US-202101_pg4_ad1',
 				alt: 'dog_image_4-1',
-				navigation: 'https://www.petsmart.com/store-locator/'
+				navigation: '/store-locator/'
 			},
 			[
 				{
 					imageId: 'US-202101_pg4_ad2',
 					alt: 'dog_image_4-2',
-					navigation: 'https://www.petsmart.com/store-locator/'
+					navigation: '/store-locator/'
 				},
 				{
 					imageId: 'US-202101_pg4_ad3',
 					alt: 'dog_image_4-3',
-					navigation: 'https://www.petsmart.com/featured-brands/authority/dry-food/dog/?pmin=0.00&srule=best-sellers'
+					navigation: '/featured-brands/authority/dry-food/dog/?pmin=0.00&srule=best-sellers'
 				},
 				{
 					imageId: 'US-202101_pg4_ad4',
 					alt: 'dog_image_4-4',
-					navigation: 'https://www.petsmart.com/featured-brands/purina-one/dog/dry-food/?pmin=0.00&srule=best-sellers'
+					navigation: '/featured-brands/purina-one/dog/dry-food/?pmin=0.00&srule=best-sellers'
 				}
 			],
 			{
 				imageId: 'US-202101_pg4_ad5',
 				alt: 'dog_image_4-5',
-				navigation: 'https://www.petsmart.com/store-locator/'
+				navigation: '/store-locator/'
 			}
 		]
 	},
@@ -144,8 +144,8 @@ const AD_CONFIG = [
 						disclaimer: 'Offer valid 12/28/20-1/31/21 with Treats™ membership. Discount taken on lowest priced qualifying item(s) purchased. Must be signed in to your Treats account prior to purchase or use Treats membership ID in stores at checkout. Prices & selection may vary by store & online. While supplies last. Mix & match allowed.',
 						sku: '5279933',
 						buttonConf: [
-							{ type: 'findStore', navigation: 'https://www.petsmart.com/store-locator/' },
-							{ type: 'buyOnline', navigation: 'https://www.petsmart.com/dog/food/food-toppers/#page_name=flyout&category=dog&cta=foodtoppers' }
+							{ type: 'findStore', navigation: '/store-locator/' },
+							{ type: 'buyOnline', navigation: '/dog/food/food-toppers/#page_name=flyout&category=dog&cta=foodtoppers' }
 						]
 					}
 				]
@@ -160,7 +160,7 @@ const AD_CONFIG = [
 							offerDescription: 'entire stock Wellness® dog food, 3 oz. pouches & tubs',
 							disclaimer: 'Must buy 4 to receive discount.',
 							sku: '5220091',
-							buttonConf: [{ type: 'findStore', navigation: 'https://www.petsmart.com/store-locator/' }]
+							buttonConf: [{ type: 'findStore', navigation: '/store-locator/' }]
 						}
 					]
 				},
@@ -173,7 +173,7 @@ const AD_CONFIG = [
 							offerDescription: 'select Purina® Pro Plan® dog food, 13 oz. cans',
 							disclaimer: 'Must buy 8 to receive discount.',
 							sku: '5067191',
-							buttonConf: [{ type: 'findStore', navigation: 'https://www.petsmart.com/store-locator/' }]
+							buttonConf: [{ type: 'findStore', navigation: '/store-locator/' }]
 						}
 					]
 				},
@@ -186,7 +186,7 @@ const AD_CONFIG = [
 							offerDescription: 'entire stock Bil-Jac® dog food, 13 oz. cans',
 							disclaimer: 'Must buy 4 to receive discount.',
 							sku: '5266784',
-							buttonConf: [{ type: 'findStore', navigation: 'https://www.petsmart.com/store-locator/' }]
+							buttonConf: [{ type: 'findStore', navigation: '/store-locator/' }]
 						}
 					]
 				}
@@ -201,7 +201,7 @@ const AD_CONFIG = [
 							offerDescription: 'entire stock Rachael Ray™ Nutrish® dog food, 3.5-48 oz. tubs, cups, cans, & variety packs',
 							disclaimer: 'Offer valid 12/28/20-1/31/21 in stores only with Treats™ membership. Transaction total prior to taxes & after discounts are applied. Max value: $5. While supplies last. Prices & selection may vary by store. Excludes services.',
 							sku: '5277822',
-							buttonConf: [{ type: 'findStore', navigation: 'https://www.petsmart.com/store-locator/' }]
+							buttonConf: [{ type: 'findStore', navigation: '/store-locator/' }]
 						}
 					]
 				},
@@ -215,8 +215,8 @@ const AD_CONFIG = [
 							disclaimer: 'Must buy 7 to receive discount.',
 							sku: '5127457',
 							buttonConf: [
-								{ type: 'findStore', navigation: 'https://www.petsmart.com/store-locator/' },
-								{ type: 'buyOnline', navigation: 'https://www.petsmart.com/featured-brands/purina-one/dog/canned-food/?pmin=0.00&srule=best-sellers' }
+								{ type: 'findStore', navigation: '/store-locator/' },
+								{ type: 'buyOnline', navigation: '/featured-brands/purina-one/dog/canned-food/?pmin=0.00&srule=best-sellers' }
 							]
 						}
 					]
@@ -231,8 +231,8 @@ const AD_CONFIG = [
 							disclaimer: 'Must buy 8 to receive discount.',
 							sku: '5278696',
 							buttonConf: [
-								{ type: 'findStore', navigation: 'https://www.petsmart.com/store-locator/' },
-								{ type: 'buyOnline', navigation: 'https://www.petsmart.com/featured-brands/authority/canned-food/dog/?pmin=0.00&srule=best-sellers' }
+								{ type: 'findStore', navigation: '/store-locator/' },
+								{ type: 'buyOnline', navigation: '/featured-brands/authority/canned-food/dog/?pmin=0.00&srule=best-sellers' }
 							]
 						}
 					]
@@ -608,7 +608,7 @@ const AD_CONFIG = [
 	{
 		page: 18,
 		type: 'local',
-		categoryFilter: ['Dog','Events'],
+		categoryFilter: ['Dog', 'Events'],
 		config: [
 			{
 				imageId: 'US-202101_DDC_pg18_Header',
@@ -689,7 +689,7 @@ const AD_CONFIG = [
 	{
 		pageNo: 25,
 		type: 'local',
-		categoryFilter: ['Dog','Cat'],
+		categoryFilter: ['Dog', 'Cat'],
 		config: {
 			imageId: 'US-202101_pg25_ad1',
 			alt: 'dog_image_25'
@@ -698,7 +698,7 @@ const AD_CONFIG = [
 	{
 		pageNo: 26,
 		type: 'local',
-		categoryFilter: ['Dog', 'Cat','Fish', 'Reptile', 'Bird', 'Smallpet', 'Services', 'Events'],
+		categoryFilter: ['Dog', 'Cat', 'Fish', 'Reptile', 'Bird', 'Smallpet', 'Services', 'Events'],
 		config: [
 			{
 				imageId: 'US-202101_BACK_pg26_ad1_v2',
