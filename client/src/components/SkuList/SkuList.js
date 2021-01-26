@@ -42,26 +42,30 @@ export const SkuList = ({ list }) => {
 		}
 	}
 
-	return list.map((skuItem) => {
-		const imageSrc = URL_CONFIG.skuUrl.replace('SKU_ID', skuItem.sku)
-		return (
-			<Grid container key={getTokenKey()}>
-				<Grid item md={4}>
-					<img style={{ cursor: 'pointer' }} src={imageSrc} onClick={() => onImageClick(skuItem)} />
-				</Grid>
-				<Grid item md={6}>
-					<h2 className='offer-msg'>{skuItem.offerMessage}</h2>
-					<p>
-						<strong>{skuItem.offerDescription}</strong>
-					</p>
-					<p>
-						<small>{skuItem.disclaimer}</small>
-					</p>
-					{skuItem.buttonConf.map((btn) => {
-						return <React.Fragment key={getTokenKey()}>{renderBtn(btn)}</React.Fragment>
-					})}{' '}
-				</Grid>
-			</Grid>
-		)
-	})
+	return (
+		<div className='sku-list'>
+			{list.map((skuItem) => {
+				const imageSrc = URL_CONFIG.skuUrl.replace('SKU_ID', skuItem.sku)
+				return (
+					<Grid container key={getTokenKey()}>
+						<Grid item md={4}>
+							<img style={{ cursor: 'pointer' }} src={imageSrc} onClick={() => onImageClick(skuItem)} />
+						</Grid>
+						<Grid item md={8}>
+							<h2 className='offer-msg'>{skuItem.offerMessage}</h2>
+							<p>
+								<strong>{skuItem.offerDescription}</strong>
+							</p>
+							<p className='ofr-disclaimer'>
+								<small>{skuItem.disclaimer}</small>
+							</p>
+							{skuItem.buttonConf.map((btn) => {
+								return <React.Fragment key={getTokenKey()}>{renderBtn(btn)}</React.Fragment>
+							})}{' '}
+						</Grid>
+					</Grid>
+				)
+			})}
+		</div>
+	)
 }
