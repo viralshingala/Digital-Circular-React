@@ -8,7 +8,7 @@ export const TwoColumn = ({ config }) => {
 		<Grid container spacing={1}>
 			{config.map(({ customPadding, ...rest }, index) => {
 				return (
-					<Grid className='px-0' lg={6} md={6} sm={6} xs={6} key={getTokenKey()}>
+					<Grid item className='px-0' lg={6} md={6} sm={6} xs={6} key={getTokenKey()}>
 						<AdImage config={rest} />
 					</Grid>
 				)

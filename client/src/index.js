@@ -1,22 +1,19 @@
-import React, { useState, useEffect } from "react";
-import ReactDOM from "react-dom";
-import AdContainer from "Components/AdContainer";
-import AD_CONFIG from "Data/adConfig";
-
+import React from 'react'
+import ReactDOM from 'react-dom'
+import AdContainer from 'Components/AdContainer'
+import AD_CONFIG from 'Data/adConfig'
+import { FilterContextProvider } from 'Components/FilterContextProvider'
 
 const App = () => {
 	return (
 		<div className='App'>
-			{/* <FilterContextProvider> */}
+			<FilterContextProvider>
 				<AdContainer config={AD_CONFIG} />
-			{/* </FilterContextProvider> */}
+			</FilterContextProvider>
 		</div>
 	)
 }
 
 export default App
 
-
-ReactDOM.render(
-  <App />,
-document.querySelector(".main-content"));
+ReactDOM.render(<App />, document.querySelector('.main-content'))

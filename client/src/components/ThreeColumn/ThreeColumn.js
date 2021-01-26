@@ -8,7 +8,7 @@ export const ThreeColumn = ({ config }) => {
 		<Grid container spacing={1}>
 			{config.map(({ customPadding, ...rest }, index) => {
 				return (
-					<Grid className='px-0' lg={4} md={4} sm={4} xs={4} key={getTokenKey()}>
+					<Grid item className='px-0' lg={4} md={4} sm={4} xs={4} key={getTokenKey()}>
 						<AdImage config={rest} />
 					</Grid>
 				)

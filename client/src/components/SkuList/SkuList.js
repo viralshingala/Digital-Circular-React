@@ -45,7 +45,7 @@ export const SkuList = ({ list }) => {
 	return list.map((skuItem) => {
 		const imageSrc = URL_CONFIG.skuUrl.replace('SKU_ID', skuItem.sku)
 		return (
-			<Grid container>
+			<Grid container key={getTokenKey()}>
 				<Grid item md={4}>
 					<img style={{ cursor: 'pointer' }} src={imageSrc} onClick={() => onImageClick(skuItem)} />
 				</Grid>
