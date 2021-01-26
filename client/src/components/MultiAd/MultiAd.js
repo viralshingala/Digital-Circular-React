@@ -9,7 +9,7 @@ import './MultiAd.scss'
 
 export const MultiAd = ({ config }) => {
 	return (
-		<Grid className='multi-ad' lg={3} md={3} sm={4}>
+		<Grid item className='multi-ad' lg={3} md={3} sm={4}>
 			{config.map((confObj, index) => {
 				return Array.isArray(confObj) ? (
 					confObj.length === 3 ? (
@@ -18,7 +18,7 @@ export const MultiAd = ({ config }) => {
 						<TwoColumn config={confObj} key={getTokenKey()} />
 					)
 				) : (
-					<Grid className={classNames('px-0', index !== 0 && 'pt-1')} lg={12} md={12} sm={12} key={getTokenKey()}>
+					<Grid item className={classNames('px-0', index !== 0 && 'pt-1')} lg={12} md={12} sm={12} key={getTokenKey()}>
 						<AdImage config={confObj} />
 					</Grid>
 				)

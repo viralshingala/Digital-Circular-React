@@ -1,53 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Digital Circular</title>
+		<!-- Google Tag Manager -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
+		<script>
+			;(function (w, d, s, l, i) {
+				w[l] = w[l] || []
+				w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' })
+				var f = d.getElementsByTagName(s)[0],
+					j = d.createElement(s),
+					dl = l != 'dataLayer' ? '&l=' + l : ''
+				j.async = true
+				j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl
+				f.parentNode.insertBefore(j, f)
+			})(window, document, 'script', 'dataLayer', 'GTM-NGQNND')
+		</script>
+		<!-- End Google Tag Manager -->
+		<script>
+			window.dataLayer = window.dataLayer || []
+			window.dataLayer.push({
+				event: 'dataLayer-initialized',
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>React WebDev </title>
-    <!-- Google Tag Manager -->
-    <link
-  rel="stylesheet"
-  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-  integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
-  crossorigin="anonymous"
-/>
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-NGQNND');</script>
-    <!-- End Google Tag Manager -->
-    <script>
-            window.dataLayer = window.dataLayer || []; 
-            window.dataLayer.push({
-            
-            'event': 'dataLayer-initialized',
-            
-            'userDetails': {
-                      'loginState': '<true | false>',
-                      },
-            'pageDetails': {
-                      'language': ('en' && 'es'),  // presumption here is that site is English only
-                      'pageName':'WebDev',
-                      }
-            });
-            </script>
-            
-</head>
-<body>
-    <!-- Google Tag Manager (noscript) -->
-<noscript>
-   
-    <iframe src="//www.googletagmanager.com/ns.html?id=GTM-NGQNND"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe>
-</noscript>
-    <!-- End Google Tag Manager (noscript) -->
-    <noscript>
-        <h1>Please enable JavaScript to see this page.</h1>
-    </noscript>
-    <main class="main-content "></main>
-</body>
-
+				userDetails: {
+					loginState: '<true | false>'
+				},
+				pageDetails: {
+					language: 'en' && 'es', // presumption here is that site is English only
+					pageName: 'WebDev'
+				}
+			})
+		</script>
+		<style>
+			body {
+				overflow: auto !important;
+				padding-right: 0 !important;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- Google Tag Manager (noscript) -->
+		<noscript>
+			<iframe src="//www.googletagmanager.com/ns.html?id=GTM-NGQNND" height="0" width="0" style="display: none; visibility: hidden;"></iframe>
+		</noscript>
+		<!-- End Google Tag Manager (noscript) -->
+		<noscript>
+			<h1>Please enable JavaScript to see this page.</h1>
+		</noscript>
+		<main class="main-content"></main>
+	</body>
 </html>

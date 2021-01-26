@@ -40,7 +40,7 @@ const DialogContent = withStyles((theme) => ({
 	}
 }))(MuiDialogContent)
 
-export const PopupWindow = ({ open, onClose, children, ...other }) => {
+export const PopupWindow = ({ open = false, onClose, children, ...other }) => {
 	useEffect(() => {
 		document.querySelector('body').style.overflow = 'auto!important'
 	})
