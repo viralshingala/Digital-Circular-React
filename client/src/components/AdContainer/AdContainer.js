@@ -6,14 +6,16 @@ import CategoryFilter from '../CategoryFilter'
 import { FilterContext } from '../FilterContextProvider'
 import { ALL } from '../../utils/appConstants'
 import MultiAd from '../MultiAd'
+import AdMenu from '../AdMenu'
 
-export const AdContainer = ({ config }) => {
+export const AdContainer = ({ config, adMenu }) => {
 	const [state, dispatch] = useContext(FilterContext)
 	const { adType, filter } = state
 
 	return (
 		<>
 			<Grid container spacing={1}>
+				<AdMenu adMenu={adMenu} />
 				<CategoryFilter config={config} />
 			</Grid>
 			<Grid container spacing={1}>

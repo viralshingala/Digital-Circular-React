@@ -1,4 +1,17 @@
-const AD_CONFIG = [
+export const adMenu = {
+	local: {
+		label: 'Local Ad',
+		validity: 'Valid Dec 28 - Jan 31',
+		imageId: 'US_202101_PLNR_CIRC-Thumbnail_x2'
+	},
+	specialty: {
+		label: 'Specialty Ad',
+		validity: 'Valid Dec 28 - Jan 31',
+		imageId: 'US_202101_PLNR_SP_CIRC-Thumbnail'
+	}
+}
+
+export const AD_CONFIG = [
 	{
 		pageNo: 1,
 		type: 'local',
@@ -736,5 +749,3 @@ const AD_CONFIG = [
 		]
 	}
 ]
-
-export default AD_CONFIG

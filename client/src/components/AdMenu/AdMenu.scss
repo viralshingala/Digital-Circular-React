@@ -1,0 +1,34 @@
+.ad-menu {
+    .paper-root {
+        .ad-menu-list-item-div {
+            .ad-menu-img {
+                float: left;
+            }
+            .ad-menu-text {
+            }
+            display: flex;
+        }
+    }
+    .popover-container {
+        .ad-menu-list {
+        }
+    }
+}
+.ad-menu-list-item {
+    padding-top: 0;
+    padding-bottom: 0;
+    min-width: 23rem;
+    border-radius: 0;
+    border: none;
+    cursor: pointer;
+    background-color: #ecf6fa;
+    margin-bottom: 1px;
+
+    &:hover {
+        background: none;
+    }
+
+    .ad-menu-img {
+        float: left;
+    }
+}
