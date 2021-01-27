@@ -7,6 +7,7 @@ import MuiDialogContent from '@material-ui/core/DialogContent'
 import MuiDialogActions from '@material-ui/core/DialogActions'
 import IconButton from '@material-ui/core/IconButton'
 import CloseIcon from '@material-ui/icons/Close'
+import './PopupWindow.scss'
 
 const styles = (theme) => ({
 	root: {
@@ -36,7 +37,8 @@ const DialogTitle = withStyles(styles)((props) => {
 
 const DialogContent = withStyles((theme) => ({
 	root: {
-		padding: theme.spacing(2)
+		padding: theme.spacing(2),
+		maxWidth: '700px !important'
 	}
 }))(MuiDialogContent)
 
@@ -45,7 +47,7 @@ export const PopupWindow = ({ open = false, onClose, children, ...other }) => {
 		document.querySelector('body').style.overflow = 'auto!important'
 	})
 	return (
-		<Dialog onClose={onClose} aria-labelledby='customized-dialog-title' open={open}>
+		<Dialog className='ad-modal' onClose={onClose} aria-labelledby='customized-dialog-title' open={open}>
 			<DialogTitle onClose={onClose} />
 			<DialogContent>{children}</DialogContent>
 		</Dialog>

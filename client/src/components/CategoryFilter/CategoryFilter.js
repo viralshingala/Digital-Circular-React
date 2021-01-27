@@ -18,6 +18,12 @@ const useStyles = makeStyles((theme) => ({
 	},
 	paper: {
 		marginRight: theme.spacing(2)
+	},
+	customWidth: {
+		'& div': {
+			// this is just an example, you can use vw, etc.
+			width: '350px'
+		}
 	}
 }))
 
@@ -86,7 +92,7 @@ export const CategoryFilter = ({ config }) => {
 						<Grow {...TransitionProps} style={{ transformOrigin: placement === 'bottom' ? 'center top' : 'center bottom' }}>
 							<Paper>
 								<ClickAwayListener onClickAway={handleClose}>
-									<MenuList autoFocusItem={open} id='menu-list-grow' onKeyDown={handleListKeyDown}>
+									<MenuList autoFocusItem={open} id='menu-list-grow' onKeyDown={handleListKeyDown} className={classes.customWidth}>
 										{filterValues.map((filterValue) => (
 											<MenuItem key={getTokenKey()} onClick={() => onFilterChange(filterValue)}>
 												{filterValue}
