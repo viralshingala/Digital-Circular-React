@@ -84,10 +84,10 @@ export const CategoryFilter = ({ config }) => {
 	return (
 		<div className={classes.root} className='category-filter'>
 			<>
-				<Button ref={anchorRef} aria-controls={open ? 'menu-list-grow' : undefined} aria-haspopup='true' onClick={handleToggle}>
+				<Button className='catgry-text' ref={anchorRef} aria-controls={open ? 'menu-list-grow' : undefined} aria-haspopup='true' onClick={handleToggle}>
 					Category: {filter}
 				</Button>
-				<Popper open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
+				<Popper className='catgry-box-shd' open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
 					{({ TransitionProps, placement }) => (
 						<Grow {...TransitionProps} style={{ transformOrigin: placement === 'bottom' ? 'center top' : 'center bottom' }}>
 							<Paper>
