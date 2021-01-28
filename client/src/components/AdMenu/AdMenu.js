@@ -16,9 +16,10 @@ import { Box, Grid, Menu } from '@material-ui/core'
 import AdMenuItem from '../AdMenuItem'
 import { FilterContext } from '../FilterContextProvider'
 
-export const AdMenu = ({ adMenu }) => {
+export const AdMenu = ({ adMenu, adConfig }) => {
 	// const [open, setOpen] = React.useState(null)
 	const [state, dispatch] = useContext(FilterContext)
+	const { adType } = state
 	const anchorRef = React.useRef(null)
 	const [activeMenu, setActiveMenu] = React.useState(null)
 	const [thumbnail, setThumbnail] = React.useState()
@@ -41,7 +42,14 @@ export const AdMenu = ({ adMenu }) => {
 		setAnchorEl(null)
 	}
 
-	const onFilterChange = () => {}
+	const onFilterChange = (adType) => {
+		dispatch({
+			type: 'CHANGE_AD_TYPE',
+			payload: adType
+		})
+		setActiveMenu(null)
+		setAnchorEl(null)
+	}
 
 	const onMenuHover = (imageId) => {
 		setActiveMenu(imageId)
@@ -102,7 +110,7 @@ export const AdMenu = ({ adMenu }) => {
 								const menuItem = adMenu[key]
 								const imageSrc = URL_CONFIG.menuImageUrl.replace('MENU_IMAGE_ID', menuItem.imageId)
 								return (
-									<ListItem data-target='ad-menu' button key={getTokenKey()} onMouseEnter={() => handlePopoverOpen(adMenu[key])} onMouseLeave={handlePopoverClose}>
+									<ListItem onClick={() => onFilterChange(menuItem.label)} data-target='ad-menu' button key={getTokenKey()} onMouseEnter={() => handlePopoverOpen(adMenu[key])} onMouseLeave={handlePopoverClose}>
 										<Grid item lg={12} md={12} sm={12}>
 											<Grid container spacing={0}>
 												<Grid item>
@@ -119,16 +127,18 @@ export const AdMenu = ({ adMenu }) => {
 							})}
 						</List>
 					</Grid>
-					{activeMenu && activeMenu.thumbnails ? (
+					{activeMenu && adConfig ? (
 						<Grid item spacing={1} data-target='ad-menu' className='thumbnail-popover'>
 							<Grid container spacing={1}>
-								{activeMenu.thumbnails.map((thumbnail) => {
-									return (
-										<Grid key={getTokenKey()} item>
-											<img className='thumbnail-image' src={`${URL_CONFIG.baseUrl}${thumbnail}`} onClick={() => onThumbnailClick(thumbnail)} />
-										</Grid>
-									)
-								})}
+								{adConfig
+									.filter((el) => el.type === adType)
+									.map(({ thumbnail }) => {
+										return (
+											<Grid key={getTokenKey()} item>
+												<img className='thumbnail-image' src={`${URL_CONFIG.baseUrl}${thumbnail}`} onClick={() => onThumbnailClick(thumbnail)} />
+											</Grid>
+										)
+									})}
 							</Grid>
 						</Grid>
 					) : null}

@@ -21,7 +21,10 @@ export const AdContainer = ({ config, adMenu }) => {
 		if (scrollRefId) {
 			const scrollEl = refAds.find((el) => el.thumbnail === scrollRefId)
 			if (scrollEl) {
-				scrollEl.ref.current.scrollIntoView()
+				scrollEl.ref.current.scrollIntoView({
+					behavior: 'smooth',
+					block: 'start'
+				})
 				dispatch({
 					type: 'SCROLL_TO_IMAGE',
 					payload: undefined
@@ -33,7 +36,7 @@ export const AdContainer = ({ config, adMenu }) => {
 	return (
 		<>
 			<Grid container spacing={1}>
-				<AdMenu adMenu={adMenu} />
+				<AdMenu adMenu={adMenu} adConfig={config} />
 				<CategoryFilter config={config} />
 			</Grid>
 			<Grid container spacing={1}>

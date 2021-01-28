@@ -26,6 +26,11 @@ const reducer = (state, action) => {
 				...state,
 				scrollRefId: action.payload
 			}
+		case 'CHANGE_AD_TYPE':
+			return {
+				...state,
+				adType: action.payload
+			}
 		default:
 			throw new Error()
 	}

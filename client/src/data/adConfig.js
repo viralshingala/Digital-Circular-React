@@ -2,23 +2,21 @@ export const adMenu = {
 	local: {
 		label: 'Local Ad',
 		validity: 'Valid Dec 28 - Jan 31',
-		imageId: 'US_202101_PLNR_CIRC-Thumbnail_x2',
-		thumbnails: ['US-202101-P1-Index-Thumbnail_x2', 'US-202101-P1-Index-Thumbnail_x2', 'US-202101-P1-Index-Thumbnail_x2', 'US-202101-P1-Index-Thumbnail_x2', 'US-202101-P1-Index-Thumbnail_x2', 'US-202101-P1-Index-Thumbnail_x2']
+		imageId: 'US_202101_PLNR_CIRC-Thumbnail_x2'
 	},
 	specialty: {
 		label: 'Specialty Ad',
 		validity: 'Valid Dec 28 - Jan 31',
-		imageId: 'US_202101_PLNR_SP_CIRC-Thumbnail',
-		thumbnails: ['US-202101-P15-Index-Thumbnail', 'US-202101-P15-Index-Thumbnail', 'US-202101-P15-Index-Thumbnail', 'US-202101-P15-Index-Thumbnail']
+		imageId: 'US_202101_PLNR_SP_CIRC-Thumbnail'
 	}
 }
 
 export const AD_CONFIG = [
 	{
 		pageNo: 1,
-		type: 'local',
+		type: 'Local Ad',
 		categoryFilter: ['Dog'],
-		thumbnails: 'US-202101-P1-Index-Thumbnail_x2',
+		thumbnail: 'US-202101-P1-Index-Thumbnail_x2',
 		config: {
 			imageId: 'US-202101_pg1_ad1_x3',
 			alt: 'dog_image_1',
@@ -29,8 +27,8 @@ export const AD_CONFIG = [
 					disclaimer: 'Valid without Treats™ membership.',
 					sku: '5303924',
 					buttonConf: [
-						{ type: 'findStore', navigation: '#' },
-						{ type: 'buyOnline', navigation: '#' }
+						{ type: 'findStore', navigation: '/store-locator/' },
+						{ type: 'buyOnline', navigation: '/featured-shops/valentines-day/top-paw/?pmin=0.00&srule=best-sellers' }
 					]
 				},
 				{
@@ -40,7 +38,7 @@ export const AD_CONFIG = [
 					sku: '5303960',
 					buttonConf: [
 						{ type: 'findStore', navigation: '/store-locator/' },
-						{ type: 'buyOnline', navigation: '/featured-shops/valentines-day/top-paw/?pmin=0.00&srule=best-sellers' }
+						{ type: 'buyOnline', navigation: '/dog/toys/top-paw/?pmin=0.00&srule=best-sellers' }
 					]
 				}
 			]
@@ -48,15 +46,16 @@ export const AD_CONFIG = [
 	},
 	{
 		pageNo: 2,
-		type: 'local',
+		type: 'Local Ad',
 		categoryFilter: ['Dog'],
+		thumbnail: 'US-202101-P2-Index-Thumbnail',
 		config: {
 			imageId: 'US-202101_pg2_ad1',
 			alt: 'dog_image_2',
 			popUp: [
 				{
 					offerMessage: 'buy 1, get the 2nd  25% off',
-					offerDescription: 'dog treats & chews  exclusions applystarting at $5.99',
+					offerDescription: 'dog treats & chews  exclusions apply',
 					disclaimer: 'Offer valid 12/28/20-1/31/21 with Treats™ membership. Discount taken on lowest priced qualifying item(s) purchased. Must be signed in to your Treats account prior to purchase or use Treats membership ID in stores at checkout. Prices & selection may vary by store & online. While supplies last. Mix & match allowed. Excludes WHIMZEES® bulk dental treats, NUTRO™, Greenies® & Pedigree®DENTASTIX™ dog treats.',
 					sku: '5303745',
 					buttonConf: [
@@ -70,7 +69,8 @@ export const AD_CONFIG = [
 	{
 		pageNo: 3,
 		categoryFilter: ['Dog'],
-		type: 'local',
+		thumbnail: 'US-202101-P3-Index-Thumbnail',
+		type: 'Local Ad',
 		config: [
 			{
 				imageId: 'US-202101_pg3_ad1',
@@ -90,7 +90,8 @@ export const AD_CONFIG = [
 				},
 				{
 					imageId: 'US-202101_pg3_ad4',
-					alt: 'dog_image_3-4'
+					alt: 'dog_image_3-4',
+					navigation: '/featured-brands/nutro/dog/dry-food/?pmin=0.00&srule=best-sellers'
 				}
 			],
 			[
@@ -101,7 +102,8 @@ export const AD_CONFIG = [
 				},
 				{
 					imageId: 'US-202101_pg3_ad6',
-					alt: 'dog_image_3-6'
+					alt: 'dog_image_3-6',
+					navigation: '/featured-brands/simply-nourish/dry-food/dog/?pmin=0.00&srule=best-sellers&prefn1=customSeries&prefv1=Simply%20Nourish%20Natural%20Solutions'
 				},
 				{
 					imageId: 'US-202101_pg3_ad7',
@@ -114,7 +116,8 @@ export const AD_CONFIG = [
 	{
 		pageNo: 4,
 		categoryFilter: ['Dog'],
-		type: 'local',
+		thumbnail: 'US-202101-P4-Index-Thumbnail',
+		type: 'Local Ad',
 		config: [
 			{
 				imageId: 'US-202101_pg4_ad1',
@@ -148,7 +151,8 @@ export const AD_CONFIG = [
 	{
 		pageNo: 5,
 		categoryFilter: ['Dog'],
-		type: 'local',
+		thumbnail: 'US-202101-P5-Index-Thumbnail',
+		type: 'Local Ad',
 		config: [
 			{
 				imageId: 'US-202101_pg5_ad1',
@@ -258,17 +262,51 @@ export const AD_CONFIG = [
 	},
 	{
 		pageNo: 6,
-		type: 'local',
+		type: 'Local Ad',
 		categoryFilter: ['Dog'],
+		thumbnail: 'US-202101-P6-Index-Thumbnail',
 		config: {
 			imageId: 'US-202101_pg6_ad1',
-			alt: 'dog_image_6'
+			alt: 'dog_image_6',
+			popUp: [
+				{
+					offerMessage: 'starting at $12.99',
+					offerDescription: 'Top Paw® collars, leads, harnesses & accessories',
+					disclaimer: 'Valid without Treats™ membership.',
+					sku: '5304468',
+					buttonConf: [
+						{ type: 'findStore', navigation: '/store-locator/' },
+						{ type: 'buyOnline', navigation: '/dog/collars-harnesses-and-leashes/top-paw/?pmin=0.00&srule=best-sellers' }
+					]
+				},
+				{
+					offerMessage: 'starting at $9.99',
+					offerDescription: 'entire stock toppers, mixers & broths, .75 oz.-2 lb. pkgs.',
+					disclaimer: 'Valid without Treats™ membership.',
+					sku: '5304319',
+					buttonConf: [
+						{ type: 'findStore', navigation: '/store-locator/' },
+						{ type: 'buyOnline', navigation: '/dog/clothing-and-shoes/top-paw/?pmin=0.00&srule=best-sellers' }
+					]
+				},
+				{
+					offerMessage: 'starting at $14.99',
+					offerDescription: 'entire stock toppers, mixers & broths, .75 oz.-2 lb. pkgs.',
+					disclaimer: 'Valid without Treats™ membership.',
+					sku: '5302334',
+					buttonConf: [
+						{ type: 'findStore', navigation: '/store-locator/' },
+						{ type: 'buyOnline', navigation: '/dog/clothing-and-shoes/sweaters-and-coats/top-paw/?pmin=0.00&srule=best-sellers' }
+					]
+				}
+			]
 		}
 	},
 	{
 		pageNo: 7,
-		type: 'local',
+		type: 'Local Ad',
 		categoryFilter: ['Dog'],
+		thumbnail: 'US-202101-P7-Index-Thumbnail',
 		config: [
 			{
 				imageId: 'US-202101_pg7_ad1',
@@ -282,8 +320,9 @@ export const AD_CONFIG = [
 	},
 	{
 		page: 8,
-		type: 'local',
+		type: 'Local Ad',
 		categoryFilter: ['Dog'],
+		thumbnail: 'US-202101-P8-Index-Thumbnail',
 		config: [
 			{
 				imageId: 'US-202101_pg8_ad1',
@@ -307,8 +346,9 @@ export const AD_CONFIG = [
 	},
 	{
 		page: 9,
-		type: 'local',
+		type: 'Local Ad',
 		categoryFilter: ['Dog', 'Services'],
+		thumbnail: 'US-202101-P9-Index-Thumbnail',
 		config: [
 			{
 				imageId: 'US-202101_SERV_pg9_Header',
@@ -334,8 +374,9 @@ export const AD_CONFIG = [
 	},
 	{
 		page: 10,
-		type: 'local',
+		type: 'Local Ad',
 		categoryFilter: ['Cat'],
+		thumbnail: 'US-202101-P10-Index-Thumbnail',
 		config: [
 			{
 				imageId: 'US-202101_pg10_ad1',
@@ -373,8 +414,9 @@ export const AD_CONFIG = [
 	},
 	{
 		page: 11,
-		type: 'local',
+		type: 'Local Ad',
 		categoryFilter: ['Cat'],
+		thumbnail: 'US-202101-P11-Index-Thumbnail',
 		config: [
 			[
 				{
@@ -422,8 +464,9 @@ export const AD_CONFIG = [
 	},
 	{
 		page: 12,
-		type: 'local',
+		type: 'Local Ad',
 		categoryFilter: ['Cat'],
+		thumbnail: 'US-202101-P12-Index-Thumbnail',
 		config: [
 			[
 				{
@@ -471,9 +514,9 @@ export const AD_CONFIG = [
 	},
 	{
 		page: 13,
-		type: 'local',
+		type: 'Local Ad',
 		categoryFilter: ['Cat'],
-		thumbnail: 'US-202101-P15-Index-Thumbnail',
+		thumbnail: 'US-202101-P13-Index-Thumbnail',
 		config: [
 			[
 				{
@@ -521,8 +564,9 @@ export const AD_CONFIG = [
 	},
 	{
 		page: 14,
-		type: 'local',
+		type: 'Local Ad',
 		categoryFilter: ['Cat'],
+		thumbnail: 'US-202101-P14-Index-Thumbnail',
 		config: [
 			{
 				imageId: 'US-202101_pg14_ad1',
@@ -542,8 +586,9 @@ export const AD_CONFIG = [
 	},
 	{
 		page: 15,
-		type: 'local',
+		type: 'Local Ad',
 		categoryFilter: ['Fish'],
+		thumbnail: 'US-202101-P15-Index-Thumbnail',
 		config: [
 			{
 				imageId: 'US-202101_pg15_ad1',
@@ -558,8 +603,9 @@ export const AD_CONFIG = [
 	},
 	{
 		page: 16,
-		type: 'local',
+		type: 'Local Ad',
 		categoryFilter: ['Reptile'],
+		thumbnail: 'US-202101-P16-Index-Thumbnail',
 		config: [
 			{
 				imageId: 'US-202101_pg16_ad1',
@@ -593,8 +639,9 @@ export const AD_CONFIG = [
 	},
 	{
 		page: 17,
-		type: 'local',
+		type: 'Local Ad',
 		categoryFilter: ['Smallpet', 'Bird'],
+		thumbnail: 'US-202101-P17-Index-Thumbnail',
 		config: [
 			{
 				imageId: 'US-202101_pg17_ad1',
@@ -624,8 +671,9 @@ export const AD_CONFIG = [
 	},
 	{
 		page: 18,
-		type: 'local',
+		type: 'Local Ad',
 		categoryFilter: ['Dog', 'Events'],
+		thumbnail: 'US-202101-P18-Index-Thumbnail',
 		config: [
 			{
 				imageId: 'US-202101_DDC_pg18_Header',
@@ -651,8 +699,9 @@ export const AD_CONFIG = [
 	},
 	{
 		pageNo: 19,
-		type: 'local',
+		type: 'Local Ad',
 		categoryFilter: ['Dog'],
+		thumbnail: 'US-202101-P19-Index-Thumbnail',
 		config: {
 			imageId: 'US-202101_pg19_ad1',
 			alt: 'dog_image_19'
@@ -660,7 +709,7 @@ export const AD_CONFIG = [
 	},
 	{
 		pageNo: 20,
-		type: 'local',
+		type: 'Local Ad',
 		categoryFilter: ['Dog'],
 		config: {
 			imageId: 'US-202101_pg20_ad1',
@@ -669,7 +718,7 @@ export const AD_CONFIG = [
 	},
 	{
 		pageNo: 21,
-		type: 'local',
+		type: 'Local Ad',
 		categoryFilter: ['Dog'],
 		config: {
 			imageId: 'US-202101_pg21_ad1',
@@ -678,7 +727,7 @@ export const AD_CONFIG = [
 	},
 	{
 		pageNo: 22,
-		type: 'local',
+		type: 'Local Ad',
 		categoryFilter: ['Dog'],
 		config: {
 			imageId: 'US-202101_pg22_ad1',
@@ -687,7 +736,7 @@ export const AD_CONFIG = [
 	},
 	{
 		pageNo: 23,
-		type: 'local',
+		type: 'Local Ad',
 		categoryFilter: ['Dog', 'Cat'],
 		config: {
 			imageId: 'US-202101_pg23_ad1',
@@ -696,7 +745,7 @@ export const AD_CONFIG = [
 	},
 	{
 		pageNo: 24,
-		type: 'local',
+		type: 'Local Ad',
 		categoryFilter: ['Dog'],
 		config: {
 			imageId: 'US-202101_pg24_ad1',
@@ -705,7 +754,7 @@ export const AD_CONFIG = [
 	},
 	{
 		pageNo: 25,
-		type: 'local',
+		type: 'Local Ad',
 		categoryFilter: ['Dog', 'Cat'],
 		config: {
 			imageId: 'US-202101_pg25_ad1',
@@ -714,10 +763,9 @@ export const AD_CONFIG = [
 	},
 	{
 		pageNo: 26,
-		type: 'local',
-
-		thumbnail: 'US-202101-P1-Index-Thumbnail_x2',
+		type: 'Local Ad',
 		categoryFilter: ['Dog', 'Cat', 'Fish', 'Reptile', 'Bird', 'Smallpet', 'Services', 'Events'],
+		thumbnail: 'US-202101-P26-Index-Thumbnail',
 		config: [
 			{
 				imageId: 'US-202101_BACK_pg26_ad1_v2',
