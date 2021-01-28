@@ -586,7 +586,7 @@ export const AD_CONFIG = [
 	},
 	{
 		page: 15,
-		type: 'Local Ad',
+		type: 'Specialty Ad',
 		categoryFilter: ['Fish'],
 		thumbnail: 'US-202101-P15-Index-Thumbnail',
 		config: [
@@ -603,7 +603,7 @@ export const AD_CONFIG = [
 	},
 	{
 		page: 16,
-		type: 'Local Ad',
+		type: 'Specialty Ad',
 		categoryFilter: ['Reptile'],
 		thumbnail: 'US-202101-P16-Index-Thumbnail',
 		config: [
@@ -639,7 +639,7 @@ export const AD_CONFIG = [
 	},
 	{
 		page: 17,
-		type: 'Local Ad',
+		type: 'Specialty Ad',
 		categoryFilter: ['Smallpet', 'Bird'],
 		thumbnail: 'US-202101-P17-Index-Thumbnail',
 		config: [
@@ -673,7 +673,6 @@ export const AD_CONFIG = [
 		page: 18,
 		type: 'Local Ad',
 		categoryFilter: ['Dog', 'Events'],
-		thumbnail: 'US-202101-P18-Index-Thumbnail',
 		config: [
 			{
 				imageId: 'US-202101_DDC_pg18_Header',
@@ -701,7 +700,6 @@ export const AD_CONFIG = [
 		pageNo: 19,
 		type: 'Local Ad',
 		categoryFilter: ['Dog'],
-		thumbnail: 'US-202101-P19-Index-Thumbnail',
 		config: {
 			imageId: 'US-202101_pg19_ad1',
 			alt: 'dog_image_19'
@@ -763,7 +761,7 @@ export const AD_CONFIG = [
 	},
 	{
 		pageNo: 26,
-		type: 'Local Ad',
+		type: 'Specialty Ad',
 		categoryFilter: ['Dog', 'Cat', 'Fish', 'Reptile', 'Bird', 'Smallpet', 'Services', 'Events'],
 		thumbnail: 'US-202101-P26-Index-Thumbnail',
 		config: [
