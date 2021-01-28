@@ -17,7 +17,18 @@ export const AdContainer = ({ config, adMenu }) => {
 		return { ...adConfig, ref: useRef() }
 	})
 
-	useEffect(() => {}, [])
+	useEffect(() => {
+		if (scrollRefId) {
+			const scrollEl = refAds.find((el) => el.thumbnail === scrollRefId)
+			if (scrollEl) {
+				scrollEl.ref.current.scrollIntoView()
+				dispatch({
+					type: 'SCROLL_TO_IMAGE',
+					payload: undefined
+				})
+			}
+		}
+	}, [scrollRefId])
 
 	return (
 		<>

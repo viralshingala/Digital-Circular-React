@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useState } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
 
 import classNames from 'classnames'
 import Button from '@material-ui/core/Button'
@@ -21,11 +21,21 @@ export const AdMenu = ({ adMenu }) => {
 	const [state, dispatch] = useContext(FilterContext)
 	const anchorRef = React.useRef(null)
 	const [activeMenu, setActiveMenu] = React.useState(null)
+	const [thumbnail, setThumbnail] = React.useState()
 	const [anchorEl, setAnchorEl] = React.useState(null)
 
 	const handleClick = (event) => {
 		setAnchorEl(event.currentTarget)
 	}
+
+	useEffect(() => {
+		if (thumbnail) {
+			dispatch({
+				type: 'SCROLL_TO_IMAGE',
+				payload: thumbnail
+			})
+		}
+	}, [thumbnail])
 
 	const handleMenuClose = () => {
 		setAnchorEl(null)
@@ -47,10 +57,9 @@ export const AdMenu = ({ adMenu }) => {
 
 	const onThumbnailClick = (thumbnail) => {
 		console.log(thumbnail)
-		dispatch({
-			type: 'SCROLL_TO_IMAGE',
-			payload: thumbnail
-		})
+		setActiveMenu(null)
+		setAnchorEl(null)
+		setThumbnail(thumbnail)
 	}
 
 	const handlePopoverClose = (event) => {
@@ -85,32 +94,34 @@ export const AdMenu = ({ adMenu }) => {
 					horizontal: 'center'
 				}}
 			>
-				<div>
+				<Grid container spacing={1} onMouseLeave={handlePopoverClose} className='ad-menu-block'>
 					{/* onMouseLeave={handlePopoverClose} */}
-					<List component='nav' aria-label='contacts' className='ad-menu-list'>
-						{Object.keys(adMenu).map((key) => {
-							const menuItem = adMenu[key]
-							const imageSrc = URL_CONFIG.menuImageUrl.replace('MENU_IMAGE_ID', menuItem.imageId)
-							return (
-								<ListItem data-target='ad-menu' button key={getTokenKey()} onMouseEnter={() => handlePopoverOpen(adMenu[key])} onMouseLeave={handlePopoverClose}>
-									<Grid item lg={12} md={12} sm={12}>
-										<Grid container spacing={0}>
-											<Grid item>
-												<img src={imageSrc} className='ad-menu-img' />
-											</Grid>
-											<Grid item>
-												<div className='label'>{menuItem.label}</div>
-												<div className='valid'>{menuItem.validity}</div>
+					<Grid key={getTokenKey()} item>
+						<List component='nav' aria-label='contacts' className='ad-menu-list'>
+							{Object.keys(adMenu).map((key) => {
+								const menuItem = adMenu[key]
+								const imageSrc = URL_CONFIG.menuImageUrl.replace('MENU_IMAGE_ID', menuItem.imageId)
+								return (
+									<ListItem data-target='ad-menu' button key={getTokenKey()} onMouseEnter={() => handlePopoverOpen(adMenu[key])} onMouseLeave={handlePopoverClose}>
+										<Grid item lg={12} md={12} sm={12}>
+											<Grid container spacing={0}>
+												<Grid item>
+													<img src={imageSrc} className='ad-menu-img' />
+												</Grid>
+												<Grid item>
+													<div className='label'>{menuItem.label}</div>
+													<div className='valid'>{menuItem.validity}</div>
+												</Grid>
 											</Grid>
 										</Grid>
-									</Grid>
-								</ListItem>
-							)
-						})}
-					</List>
+									</ListItem>
+								)
+							})}
+						</List>
+					</Grid>
 					{activeMenu && activeMenu.thumbnails ? (
-						<div data-target='ad-menu' onMouseLeave={handlePopoverClose} className='thumbnail-popover'>
-							<Grid container justify='center' spacing={1}>
+						<Grid item spacing={1} data-target='ad-menu' className='thumbnail-popover'>
+							<Grid container spacing={1}>
 								{activeMenu.thumbnails.map((thumbnail) => {
 									return (
 										<Grid key={getTokenKey()} item>
@@ -119,16 +130,9 @@ export const AdMenu = ({ adMenu }) => {
 									)
 								})}
 							</Grid>
-						</div>
-					) : // <Box component='span' m={1} data-target='ad-menu' onMouseLeave={handlePopoverClose}>
-					// 	<Grid item lg={12} md={12} sm={12} className='thumbnail-popover'>
-					// 		<Grid container spacing={0}>
-
-					// 		</Grid>
-					// 	</Grid>
-					// </Box>
-					null}
-				</div>
+						</Grid>
+					) : null}
+				</Grid>
 			</Popover>
 		</div>
 	)

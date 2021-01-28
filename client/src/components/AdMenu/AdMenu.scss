@@ -1,13 +1,15 @@
-.ad-menu-list {
-    display: inline;
-    float: left;
-}
+.ad-menu-block {
+    overflow: hidden;
+    .ad-menu-list {
+        display: inline;
+        float: left;
+    }
+    .thumbnail-popover {
+        float: left !important;
 
-.thumbnail-popover {
-    float: left;
-
-    .thumbnail-image {
-        cursor: pointer;
+        .thumbnail-image {
+            cursor: pointer;
+        }
     }
 }
 

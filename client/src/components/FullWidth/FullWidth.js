@@ -4,9 +4,9 @@ import { getTokenKey } from '../../utils/utility'
 import AdImage from '../AdImage'
 import './FullWidth.scss'
 
-export const FullWidth = ({ config }) => {
+export const FullWidth = React.forwardRef(({ config }, ref) => {
 	return (
-		<Grid item lg={3} md={3} sm={4}>
+		<Grid ref={ref} item lg={3} md={3} sm={4}>
 			<AdImage config={config} />
 		</Grid>
 
@@ -14,4 +14,4 @@ export const FullWidth = ({ config }) => {
 		// 	<AdImage config={config} />
 		// </Col>
 	)
-}
+})

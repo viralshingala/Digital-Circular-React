@@ -7,9 +7,9 @@ import TwoColumn from '../TwoColumn'
 import AdImage from '../AdImage'
 import './MultiAd.scss'
 
-export const MultiAd = ({ config }) => {
+export const MultiAd = React.forwardRef(({ config }, ref) => {
 	return (
-		<Grid item className='multi-ad' lg={3} md={3} sm={4}>
+		<Grid ref={ref} item className='multi-ad' lg={3} md={3} sm={4}>
 			{config.map((confObj, index) => {
 				return Array.isArray(confObj) ? (
 					confObj.length === 3 ? (
@@ -25,7 +25,7 @@ export const MultiAd = ({ config }) => {
 			})}
 		</Grid>
 	)
-}
+})
 
 // <Col className='multi-ad' lg={3} md={3} sm={4}>
 // 			{config.map((confObj, index) => {
