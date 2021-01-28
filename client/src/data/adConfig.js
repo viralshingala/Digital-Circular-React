@@ -2,12 +2,14 @@ export const adMenu = {
 	local: {
 		label: 'Local Ad',
 		validity: 'Valid Dec 28 - Jan 31',
-		imageId: 'US_202101_PLNR_CIRC-Thumbnail_x2'
+		imageId: 'US_202101_PLNR_CIRC-Thumbnail_x2',
+		thumbnails: ['US-202101-P1-Index-Thumbnail_x2', 'US-202101-P1-Index-Thumbnail_x2', 'US-202101-P1-Index-Thumbnail_x2', 'US-202101-P1-Index-Thumbnail_x2', 'US-202101-P1-Index-Thumbnail_x2', 'US-202101-P1-Index-Thumbnail_x2', 'US-202101-P1-Index-Thumbnail_x2', 'US-202101-P1-Index-Thumbnail_x2', 'US-202101-P1-Index-Thumbnail_x2', 'US-202101-P1-Index-Thumbnail_x2', 'US-202101-P1-Index-Thumbnail_x2', 'US-202101-P1-Index-Thumbnail_x2', 'US-202101-P1-Index-Thumbnail_x2', 'US-202101-P1-Index-Thumbnail_x2']
 	},
 	specialty: {
 		label: 'Specialty Ad',
 		validity: 'Valid Dec 28 - Jan 31',
-		imageId: 'US_202101_PLNR_SP_CIRC-Thumbnail'
+		imageId: 'US_202101_PLNR_SP_CIRC-Thumbnail',
+		thumbnails: ['US-202101-P15-Index-Thumbnail', 'US-202101-P15-Index-Thumbnail', 'US-202101-P15-Index-Thumbnail', 'US-202101-P15-Index-Thumbnail']
 	}
 }
 
@@ -16,6 +18,7 @@ export const AD_CONFIG = [
 		pageNo: 1,
 		type: 'local',
 		categoryFilter: ['Dog'],
+		thumbnail: 'US-202101-P1-Index-Thumbnail_x2',
 		config: {
 			imageId: 'US-202101_pg1_ad1_x3',
 			alt: 'dog_image_1',

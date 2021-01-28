@@ -1,3 +1,16 @@
+.ad-menu-list {
+    display: inline;
+    float: left;
+}
+
+.thumbnail-popover {
+    float: left;
+
+    .thumbnail-image {
+        cursor: pointer;
+    }
+}
+
 .ad-menu {
     .paper-root {
         .ad-menu-list-item-div {

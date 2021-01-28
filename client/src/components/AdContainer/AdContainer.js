@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
 import Grid from '@material-ui/core/Grid'
 import { getTokenKey } from '../../utils/utility'
 import FullWidth from '../FullWidth'
@@ -10,7 +10,14 @@ import AdMenu from '../AdMenu'
 
 export const AdContainer = ({ config, adMenu }) => {
 	const [state, dispatch] = useContext(FilterContext)
-	const { adType, filter } = state
+	const { adType, filter, scrollRefId } = state
+	const [ads, setAds] = useState([])
+
+	const refAds = config.map((adConfig) => {
+		return { ...adConfig, ref: useRef() }
+	})
+
+	useEffect(() => {}, [])
 
 	return (
 		<>
@@ -19,10 +26,10 @@ export const AdContainer = ({ config, adMenu }) => {
 				<CategoryFilter config={config} />
 			</Grid>
 			<Grid container spacing={1}>
-				{config
+				{refAds
 					.filter((ad) => filter === ALL || ad.categoryFilter.includes(filter))
 					.map((adConf) => {
-						return Array.isArray(adConf.config) ? <MultiAd config={adConf.config} key={getTokenKey()} /> : <FullWidth config={adConf.config} key={getTokenKey()} />
+						return Array.isArray(adConf.config) ? <MultiAd ref={adConf.ref} config={adConf.config} key={getTokenKey()} /> : <FullWidth ref={adConf.ref} config={adConf.config} key={getTokenKey()} />
 					})}
 			</Grid>
 		</>

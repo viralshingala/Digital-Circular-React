@@ -5,7 +5,8 @@ export const FilterContext = createContext([{}, () => {}])
 
 const initialState = {
 	filter: ALL,
-	adType: LOCAL
+	adType: LOCAL,
+	scrollRefId: undefined
 }
 
 const reducer = (state, action) => {
@@ -19,6 +20,11 @@ const reducer = (state, action) => {
 			return {
 				...state,
 				filter: action.payload
+			}
+		case 'SCROLL_TO_IMAGE':
+			return {
+				...state,
+				scrollRefId: action.payload
 			}
 		default:
 			throw new Error()
