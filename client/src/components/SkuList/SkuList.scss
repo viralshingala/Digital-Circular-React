@@ -2,9 +2,10 @@
     .offer-msg {
         font-size: 1.8em;
         font-weight: 700;
-        line-height: 2.8rem !important;
+        line-height: 1.8rem !important;
         font-family: "ProximaNova-A-Black";
         color: #003b49 !important;
+        padding-top: 10px;
     }
 
     p {
@@ -32,5 +33,11 @@
             text-decoration: underline;
         }
         margin-right: 2%;
+    }
+    // .sku-img-align{
+    //     margin-left: -25px;
+    // }
+    .MuiButtonBase-root{
+        margin-left:4px
     }
 }

@@ -38,14 +38,14 @@ const DialogTitle = withStyles(styles)((props) => {
 const DialogContent = withStyles((theme) => ({
 	root: {
 		padding: theme.spacing(2),
-		maxWidth: '700px !important'
+		//maxWidth: '700px !important'
 	}
 }))(MuiDialogContent)
 
 export const PopupWindow = ({ open = false, onClose, children, ...other }) => {
-	useEffect(() => {
-		document.querySelector('body').style.overflow = 'auto!important'
-	})
+	// useEffect(() => {
+	// 	document.querySelector('body').style.overflow = 'auto!important'
+	// })
 	return (
 		<Dialog className='ad-modal' onClose={onClose} aria-labelledby='customized-dialog-title' open={open}>
 			<DialogTitle onClose={onClose} />

@@ -1,4 +1,5 @@
 export const FIND_A_STORE = 'findStore'
 export const BUY_ONLINE = 'buyOnline'
+export const BOOK_NOW = 'bookNow'
 export const ALL = 'All'
 export const LOCAL = 'Local'

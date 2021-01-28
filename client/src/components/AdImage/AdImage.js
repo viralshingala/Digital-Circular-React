@@ -13,7 +13,7 @@ export const AdImage = ({ config }) => {
 
 	const onImageClick = () => {
 		if (navigation) {
-			window.location.href = window.location.href.slice(0, -10) + navigation
+			window.location.href = navigation
 		} else {
 			setShowPopUp(true)
 		}

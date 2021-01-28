@@ -3,13 +3,13 @@ export const adMenu = {
 		label: 'Local Ad',
 		validity: 'Valid Dec 28 - Jan 31',
 		imageId: 'US_202101_PLNR_CIRC-Thumbnail_x2',
-		thumbnails: ['US-202101-P1-Index-Thumbnail_x2', 'US-202101-P1-Index-Thumbnail_x2', 'US-202101-P1-Index-Thumbnail_x2', 'US-202101-P1-Index-Thumbnail_x2', 'US-202101-P1-Index-Thumbnail_x2', 'US-202101-P1-Index-Thumbnail_x2', 'US-202101-P1-Index-Thumbnail_x2', 'US-202101-P1-Index-Thumbnail_x2', 'US-202101-P1-Index-Thumbnail_x2', 'US-202101-P1-Index-Thumbnail_x2', 'US-202101-P1-Index-Thumbnail_x2', 'US-202101-P1-Index-Thumbnail_x2', 'US-202101-P1-Index-Thumbnail_x2', 'US-202101-P1-Index-Thumbnail_x2']
+		thumbnails: ['US-202101-P1-Index-Thumbnail_x2', 'US-202101-P2-Index-Thumbnail', 'US-202101-P3-Index-Thumbnail', 'US-202101-P4-Index-Thumbnail','US-202101-P5-Index-Thumbnail', 'US-202101-P6-Index-Thumbnail', 'US-202101-P7-Index-Thumbnail', 'US-202101-P8-Index-Thumbnail', 'US-202101-P9-Index-Thumbnail', 'US-202101-P10-Index-Thumbnail', 'US-202101-P11-Index-Thumbnail', 'US-202101-P12-Index-Thumbnail', 'US-202101-P13-Index-Thumbnail', 'US-202101-P14-Index-Thumbnail','US-202101-P15-Index-Thumbnail','US-202101-P16-Index-Thumbnail']
 	},
 	specialty: {
 		label: 'Specialty Ad',
 		validity: 'Valid Dec 28 - Jan 31',
 		imageId: 'US_202101_PLNR_SP_CIRC-Thumbnail',
-		thumbnails: ['US-202101-P15-Index-Thumbnail', 'US-202101-P15-Index-Thumbnail', 'US-202101-P15-Index-Thumbnail', 'US-202101-P15-Index-Thumbnail']
+		thumbnails: ['US-202101-P15-Index-Thumbnail', 'US-202101-P16-Index-Thumbnail', 'US-202101-P17-Index-Thumbnail', 'US-202101-P26-Index-Thumbnail']
 	}
 }
 
@@ -29,8 +29,8 @@ export const AD_CONFIG = [
 					disclaimer: 'Valid without Treats™ membership.',
 					sku: '5303924',
 					buttonConf: [
-						{ type: 'findStore', navigation: '#' },
-						{ type: 'buyOnline', navigation: '#' }
+						{ type: 'findStore', navigation: '/store-locator/' },
+						{ type: 'buyOnline', navigation: '/featured-shops/valentines-day/top-paw/?pmin=0.00&srule=best-sellers' }
 					]
 				},
 				{
@@ -40,7 +40,7 @@ export const AD_CONFIG = [
 					sku: '5303960',
 					buttonConf: [
 						{ type: 'findStore', navigation: '/store-locator/' },
-						{ type: 'buyOnline', navigation: '/featured-shops/valentines-day/top-paw/?pmin=0.00&srule=best-sellers' }
+						{ type: 'buyOnline', navigation: '/dog/toys/top-paw/?pmin=0.00&srule=best-sellers' }
 					]
 				}
 			]
@@ -56,7 +56,7 @@ export const AD_CONFIG = [
 			popUp: [
 				{
 					offerMessage: 'buy 1, get the 2nd  25% off',
-					offerDescription: 'dog treats & chews  exclusions applystarting at $5.99',
+					offerDescription: 'dog treats & chews  exclusions apply',
 					disclaimer: 'Offer valid 12/28/20-1/31/21 with Treats™ membership. Discount taken on lowest priced qualifying item(s) purchased. Must be signed in to your Treats account prior to purchase or use Treats membership ID in stores at checkout. Prices & selection may vary by store & online. While supplies last. Mix & match allowed. Excludes WHIMZEES® bulk dental treats, NUTRO™, Greenies® & Pedigree®DENTASTIX™ dog treats.',
 					sku: '5303745',
 					buttonConf: [
@@ -90,7 +90,8 @@ export const AD_CONFIG = [
 				},
 				{
 					imageId: 'US-202101_pg3_ad4',
-					alt: 'dog_image_3-4'
+					alt: 'dog_image_3-4',
+					navigation: '/featured-brands/nutro/dog/dry-food/?pmin=0.00&srule=best-sellers'
 				}
 			],
 			[
@@ -101,7 +102,8 @@ export const AD_CONFIG = [
 				},
 				{
 					imageId: 'US-202101_pg3_ad6',
-					alt: 'dog_image_3-6'
+					alt: 'dog_image_3-6',
+					navigation:'/featured-brands/simply-nourish/dry-food/dog/?pmin=0.00&srule=best-sellers&prefn1=customSeries&prefv1=Simply%20Nourish%20Natural%20Solutions'
 				},
 				{
 					imageId: 'US-202101_pg3_ad7',
@@ -260,10 +262,44 @@ export const AD_CONFIG = [
 		pageNo: 6,
 		type: 'local',
 		categoryFilter: ['Dog'],
-		config: {
+		config: 
+		{
 			imageId: 'US-202101_pg6_ad1',
-			alt: 'dog_image_6'
+			alt: 'dog_image_6',
+			popUp: [
+				{
+					offerMessage: 'starting at $12.99',
+					offerDescription: 'Top Paw® collars, leads, harnesses & accessories',
+					disclaimer: 'Valid without Treats™ membership.',
+					sku: '5304468',
+					buttonConf: [
+						{ type: 'findStore', navigation: '/store-locator/' },
+						{ type: 'buyOnline', navigation: '/dog/collars-harnesses-and-leashes/top-paw/?pmin=0.00&srule=best-sellers' }
+					]
+				},
+				{
+					offerMessage: 'starting at $9.99',
+					offerDescription: 'entire stock toppers, mixers & broths, .75 oz.-2 lb. pkgs.',
+					disclaimer: 'Valid without Treats™ membership.',
+					sku: '5304319',
+					buttonConf: [
+						{ type: 'findStore', navigation: '/store-locator/' },
+						{ type: 'buyOnline', navigation: '/dog/clothing-and-shoes/top-paw/?pmin=0.00&srule=best-sellers' }
+					]
+				},
+				{
+					offerMessage: 'starting at $14.99',
+					offerDescription: 'entire stock toppers, mixers & broths, .75 oz.-2 lb. pkgs.',
+					disclaimer: 'Valid without Treats™ membership.',
+					sku: '5302334',
+					buttonConf: [
+						{ type: 'findStore', navigation: '/store-locator/' },
+						{ type: 'buyOnline', navigation: '/dog/clothing-and-shoes/sweaters-and-coats/top-paw/?pmin=0.00&srule=best-sellers' }
+					]
+				}
+			]
 		}
+		
 	},
 	{
 		pageNo: 7,
