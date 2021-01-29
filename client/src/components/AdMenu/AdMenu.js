@@ -15,6 +15,7 @@ import URL_CONFIG from '../../data/urlConfig'
 import { Box, Grid, Menu } from '@material-ui/core'
 import AdMenuItem from '../AdMenuItem'
 import { FilterContext } from '../FilterContextProvider'
+import { Link } from 'react-router-dom'
 
 export const AdMenu = ({ adMenu, adConfig }) => {
 	// const [open, setOpen] = React.useState(null)
@@ -63,15 +64,14 @@ export const AdMenu = ({ adMenu, adConfig }) => {
 		setActiveMenu(adMenu)
 	}
 
-	const onThumbnailClick = (thumbnail) => {
-		console.log(thumbnail)
+	const onThumbnailClick = (page) => {
 		setActiveMenu(null)
 		setAnchorEl(null)
-		setThumbnail(thumbnail)
+		// history.pushState(null, null, `#goto_page${page}`)
+		// setThumbnail(thumbnail)
 	}
 
 	const handlePopoverClose = (event) => {
-		console.log(event.currentTarget.getAttribute('data-target'))
 		if (event.currentTarget.getAttribute('data-target') !== 'ad-menu') {
 			setActiveMenu(null)
 		}
@@ -82,9 +82,6 @@ export const AdMenu = ({ adMenu, adConfig }) => {
 
 	return (
 		<div className='ad-menu'>
-			{/* <Button ref={anchorRef} aria-controls={open ? 'menu-list-grow' : undefined} aria-haspopup='true' onClick={handleMenuClick}>
-				Ad:
-			</Button> */}
 			<Button aria-describedby={id} variant='contained' color='primary' onClick={handleClick}>
 				Ad:
 			</Button>
@@ -104,38 +101,42 @@ export const AdMenu = ({ adMenu, adConfig }) => {
 			>
 				<Grid container spacing={1} onMouseLeave={handlePopoverClose} className='ad-menu-block'>
 					{/* onMouseLeave={handlePopoverClose} */}
-					<Grid key={getTokenKey()} item>
+					<Grid container item xs={4} spacing={1}>
 						<List component='nav' aria-label='contacts' className='ad-menu-list'>
 							{Object.keys(adMenu).map((key) => {
 								const menuItem = adMenu[key]
 								const imageSrc = URL_CONFIG.menuImageUrl.replace('MENU_IMAGE_ID', menuItem.imageId)
 								return (
-									<ListItem onClick={() => onFilterChange(menuItem.label)} data-target='ad-menu' button key={getTokenKey()} onMouseEnter={() => handlePopoverOpen(adMenu[key])} onMouseLeave={handlePopoverClose}>
-										<Grid item lg={12} md={12} sm={12}>
-											<Grid container spacing={0}>
-												<Grid item>
-													<img src={imageSrc} className='ad-menu-img' />
-												</Grid>
-												<Grid item>
-													<div className='label'>{menuItem.label}</div>
-													<div className='valid'>{menuItem.validity}</div>
+									<Link to={`?ad=${menuItem.key}`} key={getTokenKey()}>
+										<ListItem onClick={() => onFilterChange(menuItem.label)} data-target='ad-menu' button onMouseEnter={() => handlePopoverOpen(adMenu[key])} onMouseLeave={handlePopoverClose}>
+											<Grid item lg={12} md={12} sm={12}>
+												<Grid container spacing={0}>
+													<Grid item>
+														<img src={imageSrc} className='ad-menu-img' />
+													</Grid>
+													<Grid item>
+														<div className='label'>{menuItem.label}</div>
+														<div className='valid'>{menuItem.validity}</div>
+													</Grid>
 												</Grid>
 											</Grid>
-										</Grid>
-									</ListItem>
+										</ListItem>
+									</Link>
 								)
 							})}
 						</List>
 					</Grid>
 					{activeMenu && adConfig ? (
-						<Grid item spacing={1} data-target='ad-menu' className='thumbnail-popover'>
+						<Grid container item xs={7} spacing={1} data-target='ad-menu' className='thumbnail-popover'>
 							<Grid container spacing={1}>
 								{adConfig
-									.filter((el) => el.type === adType)
-									.map(({ thumbnail }) => {
+									.filter((el) => el.type === activeMenu.key)
+									.map(({ thumbnail, page }) => {
 										return (
 											<Grid key={getTokenKey()} item>
-												<img className='thumbnail-image' src={`${URL_CONFIG.baseUrl}${thumbnail}`} onClick={() => onThumbnailClick(thumbnail)} />
+												<Link to={`?ad=${activeMenu.key}#goto_page${page}`}>
+													<img className='thumbnail-image' src={`${URL_CONFIG.baseUrl}${thumbnail}`} onClick={() => onThumbnailClick(page)} />
+												</Link>
 											</Grid>
 										)
 									})}

@@ -7,7 +7,7 @@ import Popper from '@material-ui/core/Popper'
 import MenuItem from '@material-ui/core/MenuItem'
 import MenuList from '@material-ui/core/MenuList'
 import { makeStyles } from '@material-ui/core/styles'
-import { getTokenKey, categoryFilterSorting } from '../../utils/utility'
+import { getTokenKey, categoryFilterSorting, getAdType } from '../../utils/utility'
 import { ALL } from '../../utils/appConstants'
 import { FilterContext } from '../FilterContextProvider'
 import './CategoryFilter.scss'
@@ -29,19 +29,21 @@ const useStyles = makeStyles((theme) => ({
 
 export const CategoryFilter = ({ config }) => {
 	const classes = useStyles()
+	const adType = getAdType()
 	const [open, setOpen] = React.useState(false)
 	const anchorRef = React.useRef(null)
 	const [state, dispatch] = useContext(FilterContext)
 	const [filter, setfilter] = useState(ALL)
 
 	let filterValues = config
+		.filter((el) => el.type === adType)
 		.map(({ categoryFilter }) => categoryFilter)
 		.reduce((acc, val) => acc.concat(val), [])
 		.reduce((unique, item) => (unique.includes(item) ? unique : [...unique, item]), [])
 		.sort((a, b) => {
 			return categoryFilterSorting[a] - categoryFilterSorting[b]
 		})
-	filterValues.push(ALL)
+	if (!filterValues.includes(ALL)) filterValues.push(ALL)
 
 	const onFilterChange = (filterValue) => {
 		setfilter(filterValue)
@@ -77,7 +79,6 @@ export const CategoryFilter = ({ config }) => {
 		if (prevOpen.current === true && open === false) {
 			anchorRef.current.focus()
 		}
-
 		prevOpen.current = open
 	}, [open])
 

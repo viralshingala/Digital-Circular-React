@@ -1,11 +1,13 @@
 export const adMenu = {
 	local: {
 		label: 'Local Ad',
+		key: 'localAd',
 		validity: 'Valid Dec 28 - Jan 31',
 		imageId: 'US_202101_PLNR_CIRC-Thumbnail_x2'
 	},
 	specialty: {
 		label: 'Specialty Ad',
+		key: 'specialty',
 		validity: 'Valid Dec 28 - Jan 31',
 		imageId: 'US_202101_PLNR_SP_CIRC-Thumbnail'
 	}
@@ -13,8 +15,8 @@ export const adMenu = {
 
 export const AD_CONFIG = [
 	{
-		pageNo: 1,
-		type: 'Local Ad',
+		page: 1,
+		type: 'localAd',
 		categoryFilter: ['Dog'],
 		thumbnail: 'US-202101-P1-Index-Thumbnail_x2',
 		config: {
@@ -45,8 +47,8 @@ export const AD_CONFIG = [
 		}
 	},
 	{
-		pageNo: 2,
-		type: 'Local Ad',
+		page: 2,
+		type: 'localAd',
 		categoryFilter: ['Dog'],
 		thumbnail: 'US-202101-P2-Index-Thumbnail',
 		config: {
@@ -67,10 +69,10 @@ export const AD_CONFIG = [
 		}
 	},
 	{
-		pageNo: 3,
+		page: 3,
 		categoryFilter: ['Dog'],
 		thumbnail: 'US-202101-P3-Index-Thumbnail',
-		type: 'Local Ad',
+		type: 'localAd',
 		config: [
 			{
 				imageId: 'US-202101_pg3_ad1',
@@ -114,10 +116,10 @@ export const AD_CONFIG = [
 		]
 	},
 	{
-		pageNo: 4,
+		page: 4,
 		categoryFilter: ['Dog'],
 		thumbnail: 'US-202101-P4-Index-Thumbnail',
-		type: 'Local Ad',
+		type: 'localAd',
 		config: [
 			{
 				imageId: 'US-202101_pg4_ad1',
@@ -149,10 +151,10 @@ export const AD_CONFIG = [
 		]
 	},
 	{
-		pageNo: 5,
+		page: 5,
 		categoryFilter: ['Dog'],
 		thumbnail: 'US-202101-P5-Index-Thumbnail',
-		type: 'Local Ad',
+		type: 'localAd',
 		config: [
 			{
 				imageId: 'US-202101_pg5_ad1',
@@ -261,8 +263,8 @@ export const AD_CONFIG = [
 		]
 	},
 	{
-		pageNo: 6,
-		type: 'Local Ad',
+		page: 6,
+		type: 'localAd',
 		categoryFilter: ['Dog'],
 		thumbnail: 'US-202101-P6-Index-Thumbnail',
 		config: {
@@ -303,8 +305,8 @@ export const AD_CONFIG = [
 		}
 	},
 	{
-		pageNo: 7,
-		type: 'Local Ad',
+		page: 7,
+		type: 'localAd',
 		categoryFilter: ['Dog'],
 		thumbnail: 'US-202101-P7-Index-Thumbnail',
 		config: [
@@ -320,7 +322,7 @@ export const AD_CONFIG = [
 	},
 	{
 		page: 8,
-		type: 'Local Ad',
+		type: 'localAd',
 		categoryFilter: ['Dog'],
 		thumbnail: 'US-202101-P8-Index-Thumbnail',
 		config: [
@@ -346,7 +348,7 @@ export const AD_CONFIG = [
 	},
 	{
 		page: 9,
-		type: 'Local Ad',
+		type: 'localAd',
 		categoryFilter: ['Dog', 'Services'],
 		thumbnail: 'US-202101-P9-Index-Thumbnail',
 		config: [
@@ -374,7 +376,7 @@ export const AD_CONFIG = [
 	},
 	{
 		page: 10,
-		type: 'Local Ad',
+		type: 'localAd',
 		categoryFilter: ['Cat'],
 		thumbnail: 'US-202101-P10-Index-Thumbnail',
 		config: [
@@ -414,7 +416,7 @@ export const AD_CONFIG = [
 	},
 	{
 		page: 11,
-		type: 'Local Ad',
+		type: 'localAd',
 		categoryFilter: ['Cat'],
 		thumbnail: 'US-202101-P11-Index-Thumbnail',
 		config: [
@@ -464,7 +466,7 @@ export const AD_CONFIG = [
 	},
 	{
 		page: 12,
-		type: 'Local Ad',
+		type: 'localAd',
 		categoryFilter: ['Cat'],
 		thumbnail: 'US-202101-P12-Index-Thumbnail',
 		config: [
@@ -514,7 +516,7 @@ export const AD_CONFIG = [
 	},
 	{
 		page: 13,
-		type: 'Local Ad',
+		type: 'localAd',
 		categoryFilter: ['Cat'],
 		thumbnail: 'US-202101-P13-Index-Thumbnail',
 		config: [
@@ -564,7 +566,7 @@ export const AD_CONFIG = [
 	},
 	{
 		page: 14,
-		type: 'Local Ad',
+		type: 'localAd',
 		categoryFilter: ['Cat'],
 		thumbnail: 'US-202101-P14-Index-Thumbnail',
 		config: [
@@ -586,7 +588,7 @@ export const AD_CONFIG = [
 	},
 	{
 		page: 15,
-		type: 'Specialty Ad',
+		type: 'specialty',
 		categoryFilter: ['Fish'],
 		thumbnail: 'US-202101-P15-Index-Thumbnail',
 		config: [
@@ -603,7 +605,7 @@ export const AD_CONFIG = [
 	},
 	{
 		page: 16,
-		type: 'Specialty Ad',
+		type: 'specialty',
 		categoryFilter: ['Reptile'],
 		thumbnail: 'US-202101-P16-Index-Thumbnail',
 		config: [
@@ -639,7 +641,7 @@ export const AD_CONFIG = [
 	},
 	{
 		page: 17,
-		type: 'Specialty Ad',
+		type: 'specialty',
 		categoryFilter: ['Smallpet', 'Bird'],
 		thumbnail: 'US-202101-P17-Index-Thumbnail',
 		config: [
@@ -671,7 +673,7 @@ export const AD_CONFIG = [
 	},
 	{
 		page: 18,
-		type: 'Local Ad',
+		type: 'localAd',
 		categoryFilter: ['Dog', 'Events'],
 		config: [
 			{
@@ -697,8 +699,8 @@ export const AD_CONFIG = [
 		]
 	},
 	{
-		pageNo: 19,
-		type: 'Local Ad',
+		page: 19,
+		type: 'localAd',
 		categoryFilter: ['Dog'],
 		config: {
 			imageId: 'US-202101_pg19_ad1',
@@ -706,8 +708,8 @@ export const AD_CONFIG = [
 		}
 	},
 	{
-		pageNo: 20,
-		type: 'Local Ad',
+		page: 20,
+		type: 'localAd',
 		categoryFilter: ['Dog'],
 		config: {
 			imageId: 'US-202101_pg20_ad1',
@@ -715,8 +717,8 @@ export const AD_CONFIG = [
 		}
 	},
 	{
-		pageNo: 21,
-		type: 'Local Ad',
+		page: 21,
+		type: 'localAd',
 		categoryFilter: ['Dog'],
 		config: {
 			imageId: 'US-202101_pg21_ad1',
@@ -724,8 +726,8 @@ export const AD_CONFIG = [
 		}
 	},
 	{
-		pageNo: 22,
-		type: 'Local Ad',
+		page: 22,
+		type: 'localAd',
 		categoryFilter: ['Dog'],
 		config: {
 			imageId: 'US-202101_pg22_ad1',
@@ -733,8 +735,8 @@ export const AD_CONFIG = [
 		}
 	},
 	{
-		pageNo: 23,
-		type: 'Local Ad',
+		page: 23,
+		type: 'localAd',
 		categoryFilter: ['Dog', 'Cat'],
 		config: {
 			imageId: 'US-202101_pg23_ad1',
@@ -742,8 +744,8 @@ export const AD_CONFIG = [
 		}
 	},
 	{
-		pageNo: 24,
-		type: 'Local Ad',
+		page: 24,
+		type: 'localAd',
 		categoryFilter: ['Dog'],
 		config: {
 			imageId: 'US-202101_pg24_ad1',
@@ -751,8 +753,8 @@ export const AD_CONFIG = [
 		}
 	},
 	{
-		pageNo: 25,
-		type: 'Local Ad',
+		page: 25,
+		type: 'localAd',
 		categoryFilter: ['Dog', 'Cat'],
 		config: {
 			imageId: 'US-202101_pg25_ad1',
@@ -760,9 +762,9 @@ export const AD_CONFIG = [
 		}
 	},
 	{
-		pageNo: 26,
-		type: 'Specialty Ad',
-		categoryFilter: ['Dog', 'Cat', 'Fish', 'Reptile', 'Bird', 'Smallpet', 'Services', 'Events'],
+		page: 26,
+		type: 'specialty',
+		categoryFilter: ['All'],
 		thumbnail: 'US-202101-P26-Index-Thumbnail',
 		config: [
 			{

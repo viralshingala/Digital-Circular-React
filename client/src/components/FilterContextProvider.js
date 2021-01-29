@@ -32,7 +32,7 @@ const reducer = (state, action) => {
 				adType: action.payload
 			}
 		default:
-			throw new Error()
+			return state
 	}
 }
 
