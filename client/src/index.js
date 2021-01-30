@@ -6,10 +6,11 @@ import { BrowserRouter as Router, Switch, Route, Link, useLocation } from 'react
 import AdContainer from 'Components/AdContainer'
 import { AD_CONFIG, adMenu } from 'Data/adConfig'
 import { FilterContextProvider } from 'Components/FilterContextProvider'
+import './index.scss'
 
 const App = () => {
 	return (
-		<div className='App'>
+		<div className='ad-app'>
 			<Router>
 				<FilterContextProvider>
 					{/* <ul>

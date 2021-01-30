@@ -1,3 +1,48 @@
+.ad-menu-popover {
+    .MuiPaper-root {
+        box-shadow: none;
+        background-color: transparent;
+    }
+}
+.ad-menu-container {
+    display: flex;
+    overflow-y: hidden;
+    .ad-menu-items {
+        flex: 1;
+        box-shadow: rgb(0 0 0 / 28%) 0px 13px 8pt 3px;
+        nav {
+            background-color: #fff;
+        }
+        .ad-menu-list {
+            .ad-menu-item {
+                background-color: #ecf6fa;
+                display: flex;
+                .image {
+                    flex: 1;
+                }
+                .content {
+                    .offer {
+                        width: max-content;
+                    }
+                }
+            }
+        }
+    }
+    .ad-sub-menu {
+        overflow: hidden;
+        box-shadow: rgb(0 0 0 / 28%) 0px 13px 8pt 3px;
+        background-color: #fff;
+
+        .MuiGrid-root {
+            // overflow-x: hidden;
+        }
+
+        .thumbnail-popover {
+            width: auto;
+        }
+    }
+}
+
 .ad-menu-block {
     overflow: hidden;
     .ad-menu-list {

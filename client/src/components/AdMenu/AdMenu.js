@@ -6,7 +6,7 @@ import MenuItem from '@material-ui/core/MenuItem'
 import Popover from '@material-ui/core/Popover'
 import SkuList from '../SkuList'
 import './AdMenu.scss'
-import { getTokenKey } from '../../utils/utility'
+import { getAdType, getTokenKey } from '../../utils/utility'
 import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
@@ -20,8 +20,8 @@ import { Link } from 'react-router-dom'
 export const AdMenu = ({ adMenu, adConfig }) => {
 	// const [open, setOpen] = React.useState(null)
 	const [state, dispatch] = useContext(FilterContext)
-	const { adType } = state
 	const anchorRef = React.useRef(null)
+	const adType = getAdType()
 	const [activeMenu, setActiveMenu] = React.useState(null)
 	const [thumbnail, setThumbnail] = React.useState()
 	const [anchorEl, setAnchorEl] = React.useState(null)
@@ -57,6 +57,7 @@ export const AdMenu = ({ adMenu, adConfig }) => {
 	}
 
 	const handleClose = () => {
+		setActiveMenu(null)
 		setAnchorEl(null)
 	}
 
@@ -82,9 +83,7 @@ export const AdMenu = ({ adMenu, adConfig }) => {
 
 	return (
 		<div className='ad-menu'>
-			<Button aria-describedby={id} variant='contained' color='primary' onClick={handleClick}>
-				Ad:
-			</Button>
+			<div onClick={handleClick}>{adType}</div>
 			<Popover
 				id={id}
 				open={open}
@@ -98,10 +97,10 @@ export const AdMenu = ({ adMenu, adConfig }) => {
 					vertical: 'top',
 					horizontal: 'center'
 				}}
+				className='ad-menu-popover'
 			>
-				<Grid container spacing={1} onMouseLeave={handlePopoverClose} className='ad-menu-block'>
-					{/* onMouseLeave={handlePopoverClose} */}
-					<Grid container item xs={4} spacing={1}>
+				<div className='ad-menu-container'>
+					<div className='ad-menu-items'>
 						<List component='nav' aria-label='contacts' className='ad-menu-list'>
 							{Object.keys(adMenu).map((key) => {
 								const menuItem = adMenu[key]
@@ -109,41 +108,41 @@ export const AdMenu = ({ adMenu, adConfig }) => {
 								return (
 									<Link to={`?ad=${menuItem.key}`} key={getTokenKey()}>
 										<ListItem onClick={() => onFilterChange(menuItem.label)} data-target='ad-menu' button onMouseEnter={() => handlePopoverOpen(adMenu[key])} onMouseLeave={handlePopoverClose}>
-											<Grid item lg={12} md={12} sm={12}>
-												<Grid container spacing={0}>
-													<Grid item>
-														<img src={imageSrc} className='ad-menu-img' />
-													</Grid>
-													<Grid item>
-														<div className='label'>{menuItem.label}</div>
-														<div className='valid'>{menuItem.validity}</div>
-													</Grid>
-												</Grid>
-											</Grid>
+											<div className='ad-menu-item'>
+												<div className='image'>
+													<img src={imageSrc} className='ad-menu-img' />
+												</div>
+												<div className='content'>
+													<div className='label'>{menuItem.label}</div>
+													<div className='offer'>{menuItem.validity}</div>
+												</div>
+											</div>
 										</ListItem>
 									</Link>
 								)
 							})}
 						</List>
-					</Grid>
-					{activeMenu && adConfig ? (
-						<Grid container item xs={7} spacing={1} data-target='ad-menu' className='thumbnail-popover'>
-							<Grid container spacing={1}>
-								{adConfig
-									.filter((el) => el.type === activeMenu.key)
-									.map(({ thumbnail, page }) => {
-										return (
-											<Grid key={getTokenKey()} item>
-												<Link to={`?ad=${activeMenu.key}#goto_page${page}`}>
-													<img className='thumbnail-image' src={`${URL_CONFIG.baseUrl}${thumbnail}`} onClick={() => onThumbnailClick(page)} />
-												</Link>
-											</Grid>
-										)
-									})}
-							</Grid>
-						</Grid>
-					) : null}
-				</Grid>
+					</div>
+					<div className='ad-sub-menu'>
+						{activeMenu && adConfig ? (
+							<div>
+								<Grid container spacing={2} data-target='ad-menu' className='thumbnail-popover'>
+									{adConfig
+										.filter((el) => el.type === activeMenu.key)
+										.map(({ thumbnail, page }, index) => {
+											return index <= 11 ? (
+												<Grid xs={2} key={getTokenKey()} item>
+													<Link to={`?ad=${activeMenu.key}#goto_page${page}`}>
+														<img className='thumbnail-image' src={`${URL_CONFIG.baseUrl}${thumbnail}`} onClick={() => onThumbnailClick(page)} />
+													</Link>
+												</Grid>
+											) : null
+										})}
+								</Grid>
+							</div>
+						) : null}
+					</div>
+				</div>
 			</Popover>
 		</div>
 	)
