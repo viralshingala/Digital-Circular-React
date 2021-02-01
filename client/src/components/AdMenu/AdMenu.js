@@ -106,8 +106,8 @@ export const AdMenu = ({ adMenu, adConfig }) => {
 								const menuItem = adMenu[key]
 								const imageSrc = URL_CONFIG.menuImageUrl.replace('MENU_IMAGE_ID', menuItem.imageId)
 								return (
-									<Link to={`?ad=${menuItem.key}`} key={getTokenKey()}>
-										<ListItem onClick={() => onFilterChange(menuItem.label)} data-target='ad-menu' button onMouseEnter={() => handlePopoverOpen(adMenu[key])} onMouseLeave={handlePopoverClose}>
+									<Link to={`?ad=${menuItem.key}`} key={getTokenKey()} className="list-decortn">
+										<ListItem className="list-hvr-color" onClick={() => onFilterChange(menuItem.label)} data-target='ad-menu' button onMouseEnter={() => handlePopoverOpen(adMenu[key])} onMouseLeave={handlePopoverClose}>
 											<div className='ad-menu-item'>
 												<div className='image'>
 													<img src={imageSrc} className='ad-menu-img' />
@@ -115,6 +115,7 @@ export const AdMenu = ({ adMenu, adConfig }) => {
 												<div className='content'>
 													<div className='label'>{menuItem.label}</div>
 													<div className='offer'>{menuItem.validity}</div>
+													<button className='btn-class-stly'>Select</button>
 												</div>
 											</div>
 										</ListItem>
