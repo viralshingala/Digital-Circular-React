@@ -106,8 +106,8 @@ export const AdMenu = ({ adMenu, adConfig }) => {
 								const menuItem = adMenu[key]
 								const imageSrc = URL_CONFIG.menuImageUrl.replace('MENU_IMAGE_ID', menuItem.imageId)
 								return (
-									<Link to={`?ad=${menuItem.key}`} key={getTokenKey()} className="list-decortn">
-										<ListItem className="list-hvr-color" onClick={() => onFilterChange(menuItem.label)} data-target='ad-menu' button onMouseEnter={() => handlePopoverOpen(adMenu[key])} onMouseLeave={handlePopoverClose}>
+									<Link to={`?ad=${menuItem.key}`} key={getTokenKey()} className='list-decortn'>
+										<ListItem className='list-hvr-color' onClick={() => onFilterChange(menuItem.label)} data-target='ad-menu' button onMouseEnter={() => handlePopoverOpen(adMenu[key])} onMouseLeave={handlePopoverClose}>
 											<div className='ad-menu-item'>
 												<div className='image'>
 													<img src={imageSrc} className='ad-menu-img' />
@@ -124,10 +124,12 @@ export const AdMenu = ({ adMenu, adConfig }) => {
 							})}
 						</List>
 					</div>
+
 					<div className='ad-sub-menu'>
 						{activeMenu && adConfig ? (
 							<div>
-								<Grid container spacing={2} data-target='ad-menu' className='thumbnail-popover'>
+								<AdMenuItem list={adConfig.filter((el) => el.type === activeMenu.key)} menuItems={2} activeMenuKey={activeMenu.key} colCount={6} onClick={onThumbnailClick} />
+								{/* <Grid container spacing={2} data-target='ad-menu' className='thumbnail-popover'>
 									{adConfig
 										.filter((el) => el.type === activeMenu.key)
 										.map(({ thumbnail, page }, index) => {
@@ -139,7 +141,7 @@ export const AdMenu = ({ adMenu, adConfig }) => {
 												</Grid>
 											) : null
 										})}
-								</Grid>
+								</Grid> */}
 							</div>
 						) : null}
 					</div>

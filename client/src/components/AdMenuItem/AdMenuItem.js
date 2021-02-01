@@ -2,39 +2,60 @@ import React, { useRef, useState } from 'react'
 import classNames from 'classnames'
 import URL_CONFIG from '../../data/urlConfig'
 import './AdMenuItem.scss'
-import { Grid } from '@material-ui/core'
+import { Button, Grid } from '@material-ui/core'
 import { getTokenKey } from '../../utils/utility'
+import { Link } from 'react-router-dom'
+import { Item } from './Item'
 
-export const AdMenuItem = ({ menuItem, activeMenu, adConfig }) => {
-	const imageSrc = URL_CONFIG.menuImageUrl.replace('MENU_IMAGE_ID', menuItem.imageId)
-	return (
-		<Grid container spacing={0}>
-			<Grid item xs={6}>
-				<Grid item>
-					<img src={imageSrc} className='ad-menu-img' />
-				</Grid>
-				<Grid item>
-					<div className='label'>{menuItem.label}</div>
-					<div className='valid'>{menuItem.validity}</div>
-				</Grid>
-			</Grid>
-			{activeMenu && adConfig ? (
-				<Grid item xs={4} data-target='ad-menu' className='thumbnail-popover'>
-					<Grid container spacing={1}>
-						{adConfig
-							.filter((el) => el.type === activeMenu.key)
-							.map(({ thumbnail, page }) => {
-								return (
-									<Grid key={getTokenKey()} item>
-										<Link to={`?ad=${activeMenu.key}#goto_page${page}`}>
-											<img className='thumbnail-image' src={`${URL_CONFIG.baseUrl}${thumbnail}`} onClick={() => onThumbnailClick(page)} />
-										</Link>
-									</Grid>
-								)
-							})}
-					</Grid>
-				</Grid>
-			) : null}
-		</Grid>
-	)
+export const AdMenuItem = ({ list, menuItems, activeMenuKey, colCount, onClick }) => {
+	const renderRow = (listItems) => {
+		return (
+			<section>
+				{listItems.map(({ thumbnail, page, ...rest }, index) => (
+					<>
+						<Item activeMenuKey={activeMenuKey} thumbnail={thumbnail} page={page} {...rest} onClick={onClick} />
+						{/* <div class='column'>
+							<Link to={`?ad=${activeMenuKey}#goto_page${page}`}>
+								<img className='thumbnail-image' src={`${URL_CONFIG.baseUrl}${thumbnail}`} />
+							</Link>
+							<div className='jump-to'>
+								<button>Jump to</button>
+							</div>
+						</div> */}
+					</>
+				))}
+			</section>
+		)
+	}
+
+	const getChunks = (array, size) => {
+		const chunked_arr = []
+		for (let i = 0; i < array.length; i++) {
+			const last = chunked_arr[chunked_arr.length - 1]
+			if (!last || last.length === size) {
+				chunked_arr.push([array[i]])
+			} else {
+				last.push(array[i])
+			}
+		}
+		return chunked_arr
+	}
+
+	const renderChunks = () => {
+		let chunks = getChunks(list, colCount)
+		if (menuItems && menuItems > 0) {
+			chunks.length = menuItems
+		}
+		chunks = chunks.map((chunk, index) => {
+			if (index === chunks.length - 1) {
+				let extraPages = 14
+				return [...chunk.slice(0, chunk.length - 1), { ...chunk[chunk.length - 1], isLast: true, extraPages }]
+			} else {
+				return chunk
+			}
+		})
+		return <>{chunks.map((chunk) => renderRow(chunk))}</>
+	}
+
+	return <div className='sub-menu-items'>{renderChunks()}</div>
 }
