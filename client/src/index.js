@@ -1,14 +1,17 @@
 import 'react-app-polyfill/ie9'
 import 'react-app-polyfill/stable'
-import React from 'react'
+import React, { useContext, useEffect, useRef } from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter as Router, Switch, Route, Link, useLocation } from 'react-router-dom'
 import AdContainer from 'Components/AdContainer'
 import { AD_CONFIG, adMenu } from 'Data/adConfig'
 import { FilterContextProvider } from 'Components/FilterContextProvider'
 import './index.scss'
+import { FilterContext } from './components/FilterContextProvider'
 
 const App = () => {
+	const [state, dispatch] = useContext(FilterContext)
+
 	return (
 		<div className='ad-app'>
 			<Router>

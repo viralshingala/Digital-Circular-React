@@ -1,30 +1,22 @@
-import React, { useContext, useEffect, useRef, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 
-import classNames from 'classnames'
-import Button from '@material-ui/core/Button'
-import MenuItem from '@material-ui/core/MenuItem'
 import Popover from '@material-ui/core/Popover'
-import SkuList from '../SkuList'
-import './AdMenu.scss'
 import { getAdType, getTokenKey } from '../../utils/utility'
 import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
-import ListItemIcon from '@material-ui/core/ListItemIcon'
-import ListItemText from '@material-ui/core/ListItemText'
 import URL_CONFIG from '../../data/urlConfig'
-import { Box, Grid, Menu } from '@material-ui/core'
 import AdMenuItem from '../AdMenuItem'
 import { FilterContext } from '../FilterContextProvider'
 import { Link } from 'react-router-dom'
+import './AdMenu.scss'
 
-export const AdMenu = ({ adMenu, adConfig }) => {
-	// const [open, setOpen] = React.useState(null)
+export const AdMenu = ({ adMenu }) => {
 	const [state, dispatch] = useContext(FilterContext)
-	const anchorRef = React.useRef(null)
+	const { ads } = state
 	const adType = getAdType()
-	const [activeMenu, setActiveMenu] = React.useState(null)
-	const [thumbnail, setThumbnail] = React.useState()
-	const [anchorEl, setAnchorEl] = React.useState(null)
+	const [activeMenu, setActiveMenu] = useState(null)
+	const [thumbnail, setThumbnail] = useState()
+	const [anchorEl, setAnchorEl] = useState(null)
 
 	const handleClick = (event) => {
 		setAnchorEl(event.currentTarget)
@@ -68,8 +60,6 @@ export const AdMenu = ({ adMenu, adConfig }) => {
 	const onThumbnailClick = (page) => {
 		setActiveMenu(null)
 		setAnchorEl(null)
-		// history.pushState(null, null, `#goto_page${page}`)
-		// setThumbnail(thumbnail)
 	}
 
 	const handlePopoverClose = (event) => {
@@ -99,7 +89,7 @@ export const AdMenu = ({ adMenu, adConfig }) => {
 				}}
 				className='ad-menu-popover'
 			>
-				<div className='ad-menu-container'>
+				<div className='ad-menu-container' onMouseLeave={handlePopoverClose}>
 					<div className='ad-menu-items'>
 						<List component='nav' aria-label='contacts' className='ad-menu-list'>
 							{Object.keys(adMenu).map((key) => {
@@ -125,26 +115,7 @@ export const AdMenu = ({ adMenu, adConfig }) => {
 						</List>
 					</div>
 
-					<div className='ad-sub-menu'>
-						{activeMenu && adConfig ? (
-							<div>
-								<AdMenuItem list={adConfig.filter((el) => el.type === activeMenu.key)} menuItems={2} activeMenuKey={activeMenu.key} colCount={6} onClick={onThumbnailClick} />
-								{/* <Grid container spacing={2} data-target='ad-menu' className='thumbnail-popover'>
-									{adConfig
-										.filter((el) => el.type === activeMenu.key)
-										.map(({ thumbnail, page }, index) => {
-											return index <= 11 ? (
-												<Grid xs={2} key={getTokenKey()} item>
-													<Link to={`?ad=${activeMenu.key}#goto_page${page}`}>
-														<img className='thumbnail-image' src={`${URL_CONFIG.baseUrl}${thumbnail}`} onClick={() => onThumbnailClick(page)} />
-													</Link>
-												</Grid>
-											) : null
-										})}
-								</Grid> */}
-							</div>
-						) : null}
-					</div>
+					<div className='ad-sub-menu'>{activeMenu && ads ? <AdMenuItem list={ads.filter((el) => el.type === activeMenu.key)} menuItems={2} activeMenuKey={activeMenu.key} colCount={6} onClick={onThumbnailClick} /> : null}</div>
 				</div>
 			</Popover>
 		</div>

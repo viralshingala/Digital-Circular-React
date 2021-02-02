@@ -1,44 +1,17 @@
-import React, { useRef, useState } from 'react'
-import classNames from 'classnames'
-import URL_CONFIG from '../../data/urlConfig'
-import './AdMenuItem.scss'
-import { Button, Grid } from '@material-ui/core'
-import { getTokenKey } from '../../utils/utility'
-import { Link } from 'react-router-dom'
+import React from 'react'
+import { getChunks, getTokenKey } from '../../utils/utility'
 import { Item } from './Item'
+import './AdMenuItem.scss'
 
 export const AdMenuItem = ({ list, menuItems, activeMenuKey, colCount, onClick }) => {
 	const renderRow = (listItems) => {
 		return (
 			<section>
-				{listItems.map(({ thumbnail, page, ...rest }, index) => (
-					<>
-						<Item activeMenuKey={activeMenuKey} thumbnail={thumbnail} page={page} {...rest} onClick={onClick} />
-						{/* <div class='column'>
-							<Link to={`?ad=${activeMenuKey}#goto_page${page}`}>
-								<img className='thumbnail-image' src={`${URL_CONFIG.baseUrl}${thumbnail}`} />
-							</Link>
-							<div className='jump-to'>
-								<button>Jump to</button>
-							</div>
-						</div> */}
-					</>
+				{listItems.map(({ thumbnail, page, ...rest }) => (
+					<Item key={getTokenKey()} activeMenuKey={activeMenuKey} thumbnail={thumbnail} page={page} {...rest} onClick={onClick} />
 				))}
 			</section>
 		)
-	}
-
-	const getChunks = (array, size) => {
-		const chunked_arr = []
-		for (let i = 0; i < array.length; i++) {
-			const last = chunked_arr[chunked_arr.length - 1]
-			if (!last || last.length === size) {
-				chunked_arr.push([array[i]])
-			} else {
-				last.push(array[i])
-			}
-		}
-		return chunked_arr
 	}
 
 	const renderChunks = () => {
@@ -54,7 +27,13 @@ export const AdMenuItem = ({ list, menuItems, activeMenuKey, colCount, onClick }
 				return chunk
 			}
 		})
-		return <>{chunks.map((chunk) => renderRow(chunk))}</>
+		return (
+			<>
+				{chunks.map((chunk) => (
+					<React.Fragment key={getTokenKey()}> {renderRow(chunk)}</React.Fragment>
+				))}
+			</>
+		)
 	}
 
 	return <div className='sub-menu-items'>{renderChunks()}</div>

@@ -18,12 +18,13 @@ export const Item = ({ activeMenuKey, thumbnail, page, isLast, extraPages, onCli
 			<div className='column' onMouseEnter={handleMouseHover} onMouseLeave={handleMouseHover} onClick={onClick}>
 				<Link to={`?ad=${activeMenuKey}#goto_page${page}`}>
 					<img className={`thumbnail-image ${isLast && 'last-item'}`} src={`${URL_CONFIG.baseUrl}${thumbnail}`} />
+					{!isLast && isHovering ? (
+						<div className='jump-to'>
+							<button>Jump to</button>
+						</div>
+					) : null}
 				</Link>
-				{!isLast && isHovering ? (
-					<div className='jump-to'>
-						<button>Jump to</button>
-					</div>
-				) : null}
+
 				{isLast ? (
 					<div className='show-extra'>
 						<Link to={`?ad=${activeMenuKey}#goto_page${extraPages}`}>{`+${extraPages} more pages`}</Link>

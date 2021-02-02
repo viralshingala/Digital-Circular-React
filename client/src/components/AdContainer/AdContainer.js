@@ -1,35 +1,34 @@
-import React, { useContext, useEffect, useRef, useState } from 'react'
+import React, { useContext, useEffect, useRef } from 'react'
 import Grid from '@material-ui/core/Grid'
-import { getAdType, getTokenKey } from '../../utils/utility'
+import { filterAds, getAdType, getTokenKey } from '../../utils/utility'
 import FullWidth from '../FullWidth'
 import CategoryFilter from '../CategoryFilter'
+import ViewPages from '../ViewPages'
 import { FilterContext } from '../FilterContextProvider'
-import { ALL } from '../../utils/appConstants'
 import MultiAd from '../MultiAd'
 import AdMenu from '../AdMenu'
 
 export const AdContainer = ({ config, adMenu }) => {
 	const adType = getAdType()
 	const [state, dispatch] = useContext(FilterContext)
-	const { filter } = state
+	const { ads, filter } = state
+
 	const refAds = config.map((adConfig) => {
 		return { ...adConfig, ref: useRef() }
 	})
-	const [ads, setAds] = useState(refAds)
 
 	useEffect(() => {
-		let result = [...refAds]
-		if (adType !== null) {
-			result = refAds.filter((ad) => ad.type === adType)
-		}
-		setAds(result)
-	}, [adType])
+		dispatch({
+			type: 'SET_AD_CONFIG',
+			payload: refAds
+		})
+	}, [])
 
 	const jumpToHash = () => {
 		if (window.location.hash) {
 			const pageId = parseInt(window.location.hash.split('#goto_page')[1])
 			if (!isNaN(pageId) && pageId > 0) {
-				const scrollEl = refAds.find((el) => el.page === pageId)
+				const scrollEl = ads.find((el) => el.page === pageId)
 				if (scrollEl && scrollEl.ref && scrollEl.ref.current !== null) {
 					scrollEl.ref.current.scrollIntoView({
 						behavior: 'smooth',
@@ -47,15 +46,14 @@ export const AdContainer = ({ config, adMenu }) => {
 	return (
 		<>
 			<Grid container spacing={1}>
-				<AdMenu adMenu={adMenu} adConfig={config} />
-				<CategoryFilter config={config} />
+				<AdMenu adMenu={adMenu} />
+				<ViewPages adConfig={config} />
+				<CategoryFilter />
 			</Grid>
 			<Grid container spacing={1}>
-				{ads
-					.filter((ad) => (filter && filter === ALL) || ad.categoryFilter.includes(filter))
-					.map((adConf) => {
-						return Array.isArray(adConf.config) ? <MultiAd ref={adConf.ref} config={adConf.config} key={getTokenKey()} /> : <FullWidth ref={adConf.ref} config={adConf.config} key={getTokenKey()} />
-					})}
+				{filterAds(ads, adType, filter).map((adConf) => {
+					return Array.isArray(adConf.config) ? <MultiAd ref={adConf.ref} config={adConf.config} key={getTokenKey()} /> : <FullWidth ref={adConf.ref} config={adConf.config} key={getTokenKey()} />
+				})}
 			</Grid>
 		</>
 	)

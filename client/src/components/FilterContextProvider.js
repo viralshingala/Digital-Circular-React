@@ -1,4 +1,5 @@
-import React, { useReducer, createContext } from 'react'
+import React, { useReducer, createContext, useRef } from 'react'
+import { AD_CONFIG } from '../data/adConfig'
 import { ALL, LOCAL } from '../utils/appConstants'
 
 export const FilterContext = createContext([{}, () => {}])
@@ -6,11 +7,17 @@ export const FilterContext = createContext([{}, () => {}])
 const initialState = {
 	filter: ALL,
 	adType: LOCAL,
-	scrollRefId: undefined
+	scrollRefId: undefined,
+	ads: []
 }
 
 const reducer = (state, action) => {
 	switch (action.type) {
+		case 'SET_AD_CONFIG':
+			return {
+				...state,
+				ads: action.payload
+			}
 		case 'CHANGE_AD_TYPE':
 			return {
 				...state,
