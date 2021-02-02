@@ -8,10 +8,14 @@
     display: flex;
     overflow-y: hidden;
     .ad-menu-items {
+        .MuiList-root {
         flex: 1;
-        box-shadow: rgb(0 0 0 / 28%) 0px 13px 8pt 3px;
+        //box-shadow: rgb(0 0 0 / 28%) 0px 0px 8pt 3px;
+        // z-index: 999;
+        }
         nav {
             background-color:#ECF6FA;
+            //box-shadow: rgb(0 0 0 / 28%) 0px 13px 8pt 3px
             //padding-right: 110px;
         }
         .ad-menu-list {
