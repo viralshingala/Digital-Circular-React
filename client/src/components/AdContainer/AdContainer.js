@@ -2,11 +2,10 @@ import React, { useContext, useEffect, useRef } from 'react'
 import Grid from '@material-ui/core/Grid'
 import { filterAds, getAdType, getTokenKey } from '../../utils/utility'
 import FullWidth from '../FullWidth'
-import CategoryFilter from '../CategoryFilter'
-import ViewPages from '../ViewPages'
+import Header from '../Header'
 import { FilterContext } from '../FilterContextProvider'
 import MultiAd from '../MultiAd'
-import AdMenu from '../AdMenu'
+import './AdContainer.scss'
 
 export const AdContainer = ({ config, adMenu }) => {
 	const adType = getAdType()
@@ -45,11 +44,7 @@ export const AdContainer = ({ config, adMenu }) => {
 
 	return (
 		<>
-			<Grid container spacing={1}>
-				<AdMenu adMenu={adMenu} />
-				<ViewPages adConfig={config} />
-				<CategoryFilter />
-			</Grid>
+			<Header adMenu={adMenu} adConfig={config} />
 			<Grid container spacing={1}>
 				{filterAds(ads, adType, filter).map((adConf) => {
 					return Array.isArray(adConf.config) ? <MultiAd ref={adConf.ref} config={adConf.config} key={getTokenKey()} /> : <FullWidth ref={adConf.ref} config={adConf.config} key={getTokenKey()} />

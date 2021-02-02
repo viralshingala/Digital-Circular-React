@@ -1,8 +1,8 @@
 import React, { useState, useContext } from 'react'
 import Popover from '@material-ui/core/Popover'
-import { filterAds, getAdType, getChunks, getTokenKey } from '../../utils/utility'
-import { FilterContext } from '../FilterContextProvider'
-import { Item } from '../AdMenuItem/Item'
+import { filterAds, getAdType, getChunks, getTokenKey } from '../../../utils/utility'
+import { FilterContext } from '../../FilterContextProvider'
+import ThumbnailRow from '../../ThumbnailRow'
 import './ViewPages.scss'
 
 export const ViewPages = () => {
@@ -11,11 +11,13 @@ export const ViewPages = () => {
 	const [anchorEl, setAnchorEl] = useState(null)
 	const adType = getAdType()
 
-	const handleMouseHover = (e) => {
+	const handleMouseHover = (event) => {
+		console.log('handleMouseHover')
 		setAnchorEl(event.currentTarget)
 	}
 
-	const handlePopoverClose = (event) => {
+	const handlePopoverClose = () => {
+		console.log('handlePopoverClose')
 		setAnchorEl(null)
 	}
 
@@ -27,12 +29,11 @@ export const ViewPages = () => {
 		return (
 			<section>
 				{listItems.map(({ thumbnail, page, ...rest }) => (
-					<Item key={getTokenKey()} activeMenuKey={adType} thumbnail={thumbnail} page={page} {...rest} onClick={onClick} />
+					<ThumbnailRow key={getTokenKey()} activeMenuKey={adType} thumbnail={thumbnail} page={page} {...rest} onClick={onClick} />
 				))}
 			</section>
 		)
 	}
-
 	const renderChunks = () => {
 		const filterdAds = filterAds(ads, adType)
 		let chunks = getChunks(filterdAds, 8)
@@ -54,19 +55,25 @@ export const ViewPages = () => {
 		)
 	}
 
-	const handleClose = () => {
-		setAnchorEl(null)
-	}
-
 	const open = Boolean(anchorEl)
-	const id = open ? 'simple-popover' : undefined
 
 	return (
-		<div className='view-pages' onMouseEnter={handleMouseHover} onMouseLeave={handlePopoverClose}>
-			View Pages
-			<Popover id={id} open={open} anchorEl={anchorEl} onClose={handleClose}>
-				<div className='view-pages-popover'>{renderChunks()}</div>
-			</Popover>
-		</div>
+		<>
+			<span className='view-pages' onMouseEnter={handleMouseHover}>
+				View Pages
+				<Popover
+					disableRestoreFocus
+					anchorOrigin={{
+						vertical: 'bottom'
+					}}
+					open={open}
+					anchorEl={anchorEl}
+				>
+					<div className='view-pages-popover' onMouseLeave={handlePopoverClose}>
+						{renderChunks()}
+					</div>
+				</Popover>
+			</span>
+		</>
 	)
 }

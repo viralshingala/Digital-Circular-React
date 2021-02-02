@@ -7,9 +7,9 @@ import Popper from '@material-ui/core/Popper'
 import MenuItem from '@material-ui/core/MenuItem'
 import MenuList from '@material-ui/core/MenuList'
 import { makeStyles } from '@material-ui/core/styles'
-import { getTokenKey, categoryFilterSorting, getAdType, filterAds } from '../../utils/utility'
-import { ALL } from '../../utils/appConstants'
-import { FilterContext } from '../FilterContextProvider'
+import { getTokenKey, categoryFilterSorting, getAdType, filterAds } from '../../../utils/utility'
+import { ALL } from '../../../utils/appConstants'
+import { FilterContext } from '../../FilterContextProvider'
 import './CategoryFilter.scss'
 
 const useStyles = makeStyles((theme) => ({

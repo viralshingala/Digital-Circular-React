@@ -1,6 +1,6 @@
 import React from 'react'
-import { getChunks, getTokenKey } from '../../utils/utility'
-import { Item } from './Item'
+import ThumbnailRow from '../../../ThumbnailRow'
+import { getChunks, getTokenKey } from '../../../../utils/utility'
 import './AdMenuItem.scss'
 
 export const AdMenuItem = ({ list, menuItems, activeMenuKey, colCount, onClick }) => {
@@ -8,7 +8,7 @@ export const AdMenuItem = ({ list, menuItems, activeMenuKey, colCount, onClick }
 		return (
 			<section>
 				{listItems.map(({ thumbnail, page, ...rest }) => (
-					<Item key={getTokenKey()} activeMenuKey={activeMenuKey} thumbnail={thumbnail} page={page} {...rest} onClick={onClick} />
+					<ThumbnailRow key={getTokenKey()} activeMenuKey={activeMenuKey} thumbnail={thumbnail} page={page} {...rest} onClick={onClick} />
 				))}
 			</section>
 		)

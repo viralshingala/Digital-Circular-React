@@ -9,12 +9,12 @@
     overflow-y: hidden;
     .ad-menu-items {
         .MuiList-root {
-        flex: 1;
-        //box-shadow: rgb(0 0 0 / 28%) 0px 0px 8pt 3px;
-        // z-index: 999;
+            flex: 1;
+            //box-shadow: rgb(0 0 0 / 28%) 0px 0px 8pt 3px;
+            // z-index: 999;
         }
         nav {
-            background-color:#ECF6FA;
+            background-color: #ecf6fa;
             //box-shadow: rgb(0 0 0 / 28%) 0px 13px 8pt 3px
             //padding-right: 110px;
         }
@@ -35,36 +35,32 @@
                         text-decoration: none;
                         font-size: 14px;
                     }
-                    .label{
+                    .label {
                         font-weight: bold;
                         font-size: 16px;
                     }
 
-                    .btn-class-stly{
-                    margin-top: 20px;
-                    background: white;
-                    // border: 2px solid lightgray;
-                    // color: lightgray;
-                    border: 2px solid #007db4;
-                    color: #007db4;
-                    //font-weight: 100;
-                    padding: 5px 13px;
-                    border-radius: 5px;
-                    font: Arial,Helvetica,sans-serif;
+                    .btn-active {
+                        margin-top: 20px;
+                        background: white;
+                        // border: 2px solid lightgray;
+                        // color: lightgray;
+                        border: 2px solid #007db4;
+                        color: #007db4;
+                        //font-weight: 100;
+                        padding: 5px 13px;
+                        border-radius: 5px;
+                        font: Arial, Helvetica, sans-serif;
                     }
-
-    
                 }
             }
-           
         }
-        .list-decortn:hover{
+        .list-decortn:hover {
             text-decoration: none;
         }
-        .list-hvr-color:hover{
+        .list-hvr-color:hover {
             background-color: white;
         }
-        
     }
 
     .ad-sub-menu {

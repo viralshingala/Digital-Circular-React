@@ -1,12 +1,9 @@
-import React, { useRef, useState } from 'react'
-import classNames from 'classnames'
+import React, { useState } from 'react'
 import URL_CONFIG from '../../data/urlConfig'
-import './AdMenuItem.scss'
-import { Button, Grid } from '@material-ui/core'
-import { getTokenKey } from '../../utils/utility'
 import { Link } from 'react-router-dom'
+import './ThumbnailRow.scss'
 
-export const Item = ({ activeMenuKey, thumbnail, page, isLast, extraPages, onClick }) => {
+export const ThumbnailRow = ({ activeMenuKey, thumbnail, page, isLast, extraPages, onClick }) => {
 	const [isHovering, setHovering] = useState(false)
 
 	const handleMouseHover = () => {

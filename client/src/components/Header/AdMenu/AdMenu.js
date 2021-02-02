@@ -1,12 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react'
 
 import Popover from '@material-ui/core/Popover'
-import { getAdType, getTokenKey } from '../../utils/utility'
+import { getAdType, getTokenKey } from '../../../utils/utility'
 import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
-import URL_CONFIG from '../../data/urlConfig'
-import AdMenuItem from '../AdMenuItem'
-import { FilterContext } from '../FilterContextProvider'
+import URL_CONFIG from '../../../data/urlConfig'
+import AdMenuItem from './AdMenuItem'
+import { FilterContext } from '../../FilterContextProvider'
 import { Link } from 'react-router-dom'
 import './AdMenu.scss'
 
@@ -105,7 +105,7 @@ export const AdMenu = ({ adMenu }) => {
 												<div className='content'>
 													<div className='label'>{menuItem.label}</div>
 													<div className='offer'>{menuItem.validity}</div>
-													<button className='btn-class-stly'>Select</button>
+													<button className={adType === menuItem.key ? 'btn-disabled' : 'btn-active'}>{adType === menuItem.key ? 'Selected' : 'Select'}</button>
 												</div>
 											</div>
 										</ListItem>
