@@ -21,7 +21,6 @@ const useStyles = makeStyles((theme) => ({
 	},
 	customWidth: {
 		'& div': {
-			// this is just an example, you can use vw, etc.
 			width: '350px'
 		}
 	}
@@ -84,28 +83,26 @@ export const CategoryFilter = () => {
 
 	return (
 		<div className={classes.root} className='category-filter'>
-			<>
-				<div className='catgry-text' ref={anchorRef} aria-controls={open ? 'menu-list-grow' : undefined} aria-haspopup='true' onClick={handleToggle}>
-					Category: {filter}
-				</div>
-				<Popper className='catgry-box-shd' open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
-					{({ TransitionProps, placement }) => (
-						<Grow {...TransitionProps} style={{ transformOrigin: placement === 'bottom' ? 'center top' : 'center bottom' }}>
-							<Paper>
-								<ClickAwayListener onClickAway={handleClose}>
-									<MenuList autoFocusItem={open} id='menu-list-grow' onKeyDown={handleListKeyDown} className={classes.customWidth}>
-										{filterValues.map((filterValue) => (
-											<MenuItem key={getTokenKey()} onClick={() => onFilterChange(filterValue)}>
-												{filterValue}
-											</MenuItem>
-										))}
-									</MenuList>
-								</ClickAwayListener>
-							</Paper>
-						</Grow>
-					)}
-				</Popper>
-			</>
+			<div className='catgry-text' ref={anchorRef} aria-controls={open ? 'menu-list-grow' : undefined} aria-haspopup='true' onClick={handleToggle}>
+				Category: {filter}
+			</div>
+			<Popper className='catgry-box-shd' open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
+				{({ TransitionProps, placement }) => (
+					<Grow {...TransitionProps} style={{ transformOrigin: placement === 'bottom' ? 'center top' : 'center bottom' }}>
+						<Paper>
+							<ClickAwayListener onClickAway={handleClose}>
+								<MenuList autoFocusItem={open} id='menu-list-grow' onKeyDown={handleListKeyDown} className={classes.customWidth}>
+									{filterValues.map((filterValue) => (
+										<MenuItem key={getTokenKey()} onClick={() => onFilterChange(filterValue)}>
+											{filterValue}
+										</MenuItem>
+									))}
+								</MenuList>
+							</ClickAwayListener>
+						</Paper>
+					</Grow>
+				)}
+			</Popper>
 		</div>
 	)
 }

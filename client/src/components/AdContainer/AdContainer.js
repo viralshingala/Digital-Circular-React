@@ -44,7 +44,6 @@ export const AdContainer = ({ config, adMenu }) => {
 
 	return (
 		<>
-			{/* <div style={{ height: '100px', backgroundColor: '#fff' }}></div> */}
 			<Header adMenu={adMenu} adConfig={config} />
 			<Grid container spacing={0}>
 				{filterAds(ads, adType, filter).map((adConf) => {

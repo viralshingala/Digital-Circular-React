@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useState } from 'react'
-
 import Popover from '@material-ui/core/Popover'
 import { getAdType, getTokenKey } from '../../../utils/utility'
 import List from '@material-ui/core/List'
@@ -31,10 +30,6 @@ export const AdMenu = ({ adMenu }) => {
 		}
 	}, [thumbnail])
 
-	const handleMenuClose = () => {
-		setAnchorEl(null)
-	}
-
 	const onFilterChange = (adType) => {
 		dispatch({
 			type: 'CHANGE_AD_TYPE',
@@ -42,10 +37,6 @@ export const AdMenu = ({ adMenu }) => {
 		})
 		setActiveMenu(null)
 		setAnchorEl(null)
-	}
-
-	const onMenuHover = (imageId) => {
-		setActiveMenu(imageId)
 	}
 
 	const handleClose = () => {

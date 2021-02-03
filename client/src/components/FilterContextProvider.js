@@ -1,5 +1,4 @@
 import React, { useReducer, createContext, useRef } from 'react'
-import { AD_CONFIG } from '../data/adConfig'
 import { ALL, LOCAL } from '../utils/appConstants'
 
 export const FilterContext = createContext([{}, () => {}])
