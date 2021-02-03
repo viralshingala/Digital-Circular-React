@@ -1,16 +1,16 @@
 .category-filter {
-    left: 85%;
+    left: 75%;
+    display: inline;
     position: relative;
 
     .title-link:hover {
         text-decoration: underline;
     }
-    .catgry-box-shd{
+    .catgry-box-shd {
         box-shadow: rgba(0, 0, 0, 0.28) 0px 13px 8pt 3px;
     }
-    .catgry-text{
+    .catgry-text {
         text-transform: capitalize !important;
         text-decoration: underline;
     }
-
 }

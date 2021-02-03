@@ -58,22 +58,25 @@ export const ViewPages = () => {
 	const open = Boolean(anchorEl)
 
 	return (
-		<>
-			<span className='view-pages' onMouseEnter={handleMouseHover}>
-				View Pages
-				<Popover
-					disableRestoreFocus
-					anchorOrigin={{
-						vertical: 'bottom'
-					}}
-					open={open}
-					anchorEl={anchorEl}
-				>
-					<div className='view-pages-popover' onMouseLeave={handlePopoverClose}>
-						{renderChunks()}
-					</div>
-				</Popover>
-			</span>
-		</>
+		<div className='view-pages' onMouseEnter={handleMouseHover}>
+			View Pages
+			<Popover
+				disableRestoreFocus
+				anchorOrigin={{
+					vertical: 'bottom',
+					horizontal: 'left'
+				}}
+				transformOrigin={{
+					vertical: 'top',
+					horizontal: 'right'
+				}}
+				open={open}
+				anchorEl={anchorEl}
+			>
+				<div className='view-pages-popover' onMouseLeave={handlePopoverClose}>
+					{renderChunks()}
+				</div>
+			</Popover>
+		</div>
 	)
 }

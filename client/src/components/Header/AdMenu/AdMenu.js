@@ -73,7 +73,9 @@ export const AdMenu = ({ adMenu }) => {
 
 	return (
 		<div className='ad-menu'>
-			<div onClick={handleClick}>{adType}</div>
+			<div className='selected-menu' onClick={handleClick}>
+				{adMenu[adType].label}
+			</div>
 			<Popover
 				id={id}
 				open={open}

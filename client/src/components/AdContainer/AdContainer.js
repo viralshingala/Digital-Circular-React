@@ -44,8 +44,9 @@ export const AdContainer = ({ config, adMenu }) => {
 
 	return (
 		<>
+			{/* <div style={{ height: '100px', backgroundColor: '#fff' }}></div> */}
 			<Header adMenu={adMenu} adConfig={config} />
-			<Grid container spacing={1}>
+			<Grid container spacing={0}>
 				{filterAds(ads, adType, filter).map((adConf) => {
 					return Array.isArray(adConf.config) ? <MultiAd ref={adConf.ref} config={adConf.config} key={getTokenKey()} /> : <FullWidth ref={adConf.ref} config={adConf.config} key={getTokenKey()} />
 				})}

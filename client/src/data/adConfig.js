@@ -1,5 +1,5 @@
 export const adMenu = {
-	local: {
+	localAd: {
 		label: 'Local Ad',
 		key: 'localAd',
 		validity: 'Valid Dec 28 - Jan 31',

@@ -7,10 +7,12 @@ import './Header.scss'
 
 export const Header = ({ adMenu, config }) => {
 	return (
-		<Grid container spacing={1}>
-			<AdMenu adMenu={adMenu} />
-			<ViewPages adConfig={config} />
-			<CategoryFilter />
-		</Grid>
+		<div>
+			<Grid container spacing={0}>
+				<AdMenu adMenu={adMenu} />
+				<ViewPages adConfig={config} />
+				<CategoryFilter />
+			</Grid>
+		</div>
 	)
 }

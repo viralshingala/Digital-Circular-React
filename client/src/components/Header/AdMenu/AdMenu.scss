@@ -15,6 +15,7 @@
         }
         nav {
             background-color: #ecf6fa;
+            padding: 0;
             //box-shadow: rgb(0 0 0 / 28%) 0px 13px 8pt 3px
             //padding-right: 110px;
         }
@@ -94,6 +95,11 @@
 }
 
 .ad-menu {
+    position: relative;
+    left: 3%;
+    .selected-menu {
+        text-decoration: underline;
+    }
     .paper-root {
         .ad-menu-list-item-div {
             .ad-menu-img {
@@ -109,21 +115,3 @@
         }
     }
 }
-// .ad-menu-list-item {
-//     padding-top: 0;
-//     padding-bottom: 0;
-//     min-width: 23rem;
-//     border-radius: 0;
-//     border: none;
-//     cursor: pointer;
-//     background-color: #ecf6fa;
-//     margin-bottom: 1px;
-
-//     &:hover {
-//         background: none;
-//     }
-
-//     .ad-menu-img {
-//         float: left;
-//     }
-// }
