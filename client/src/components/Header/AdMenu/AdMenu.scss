@@ -44,14 +44,22 @@
                     .btn-active {
                         margin-top: 20px;
                         background: white;
-                        // border: 2px solid lightgray;
-                        // color: lightgray;
                         border: 2px solid #007db4;
                         color: #007db4;
-                        //font-weight: 100;
+                        font-weight: 400;
                         padding: 5px 13px;
                         border-radius: 5px;
-                        font: Arial, Helvetica, sans-serif;
+                       // font: Arial, Helvetica, sans-serif;
+                    }
+                    .btn-disabled{
+                        margin-top: 20px;
+                        background: white;
+                        border: 2px solid lightgray;
+                        color: lightgray;
+                        font-weight: 400;
+                        padding: 5px 13px;
+                        border-radius: 5px;
+                        //font: Arial, Helvetica, sans-serif;
                     }
                 }
             }

@@ -85,9 +85,9 @@ export const CategoryFilter = () => {
 	return (
 		<div className={classes.root} className='category-filter'>
 			<>
-				<Button className='catgry-text' ref={anchorRef} aria-controls={open ? 'menu-list-grow' : undefined} aria-haspopup='true' onClick={handleToggle}>
+				<div className='catgry-text' ref={anchorRef} aria-controls={open ? 'menu-list-grow' : undefined} aria-haspopup='true' onClick={handleToggle}>
 					Category: {filter}
-				</Button>
+				</div>
 				<Popper className='catgry-box-shd' open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
 					{({ TransitionProps, placement }) => (
 						<Grow {...TransitionProps} style={{ transformOrigin: placement === 'bottom' ? 'center top' : 'center bottom' }}>

@@ -16,15 +16,14 @@ export const ThumbnailRow = ({ activeMenuKey, thumbnail, page, isLast, extraPage
 				<Link to={`?ad=${activeMenuKey}#goto_page${page}`}>
 					<img className={`thumbnail-image ${isLast && 'last-item'}`} src={`${URL_CONFIG.baseUrl}${thumbnail}`} />
 					{!isLast && isHovering ? (
-						<div className='jump-to'>
-							<button>Jump to</button>
-						</div>
+							<div className='jump-to'>Jump to</div>
+						
 					) : null}
 				</Link>
 
 				{isLast ? (
 					<div className='show-extra'>
-						<Link to={`?ad=${activeMenuKey}#goto_page${extraPages}`}>{`+${extraPages} more pages`}</Link>
+						<Link  to={`?ad=${activeMenuKey}#goto_page${page}`} className='more-pages-decor'>{`+${extraPages} more pages`}</Link>
 					</div>
 				) : null}
 			</div>
