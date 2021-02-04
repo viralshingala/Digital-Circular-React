@@ -77,7 +77,9 @@ export const AdMenu = ({ adMenu }) => {
 	return (
 		<div className='ad-menu'>
 			<div className='selected-menu' onClick={handleClick}>
-				{adMenu[adType].label}
+				<span className='selected-menu-label'>{adMenu[adType].label}</span>
+				<i className={`arrow ${open ? 'up' : 'down'}`}></i>
+				<span className='validity'>{adMenu[adType].validity}</span>
 			</div>
 			<Popover
 				id={id}

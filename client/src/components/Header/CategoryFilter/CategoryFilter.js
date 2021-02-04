@@ -81,7 +81,7 @@ export const CategoryFilter = () => {
 	return (
 		<div className={classes.root} className='category-filter'>
 			<div className='catgry-text' ref={anchorRef} aria-controls={open ? 'menu-list-grow' : undefined} aria-haspopup='true' onClick={handleToggle}>
-				Category: {filter}
+				Category:<span className='slctd-catgry-text'>{filter}</span> <i className={`arrow ${open ? 'up' : 'down'}`}></i>
 			</div>
 			<Popper className='catgry-box-shd' open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
 				{({ TransitionProps, placement }) => (

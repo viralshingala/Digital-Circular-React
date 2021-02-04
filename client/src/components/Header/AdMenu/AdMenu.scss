@@ -10,22 +10,16 @@
     .ad-menu-items {
         .MuiList-root {
             flex: 1;
-            //box-shadow: rgb(0 0 0 / 28%) 0px 0px 8pt 3px;
-            // z-index: 999;
         }
         nav {
             background-color: #ecf6fa;
             padding: 0;
-            //box-shadow: rgb(0 0 0 / 28%) 0px 13px 8pt 3px
-            //padding-right: 110px;
         }
         .ad-menu-list {
             .ad-menu-item {
-                //background-color: #ecf6fa;
                 display: flex;
                 .image {
                     flex: 1;
-                    //min-height: 120pt;
                 }
                 .content {
                     padding-left: 20px;
@@ -49,9 +43,8 @@
                         font-weight: 400;
                         padding: 5px 13px;
                         border-radius: 5px;
-                       // font: Arial, Helvetica, sans-serif;
                     }
-                    .btn-disabled{
+                    .btn-disabled {
                         margin-top: 20px;
                         background: white;
                         border: 2px solid lightgray;
@@ -59,7 +52,6 @@
                         font-weight: 400;
                         padding: 5px 13px;
                         border-radius: 5px;
-                        //font: Arial, Helvetica, sans-serif;
                     }
                 }
             }
@@ -76,11 +68,6 @@
         overflow: hidden;
         box-shadow: rgb(0 0 0 / 28%) 0px 13px 8pt 3px;
         background-color: #fff;
-
-        .MuiGrid-root {
-            // overflow-x: hidden;
-        }
-
         .thumbnail-popover {
             width: auto;
         }
@@ -105,9 +92,30 @@
 .ad-menu {
     position: relative;
     left: 3%;
-    .selected-menu {
+    .selected-menu-label {
         text-decoration: underline;
     }
+    .validity {
+    }
+    .arrow {
+        border: solid black;
+        border-width: 0 3px 3px 0;
+        display: inline-block;
+        padding: 3px;
+
+        &.up {
+            transform: rotate(-135deg);
+            transition-duration: 0.5s;
+            -webkit-transform: rotate(-135deg);
+        }
+
+        &.down {
+            transform: rotate(45deg);
+            transition-duration: 0.5s;
+            -webkit-transform: rotate(45deg);
+        }
+    }
+
     .paper-root {
         .ad-menu-list-item-div {
             .ad-menu-img {
@@ -116,10 +124,6 @@
             .ad-menu-text {
             }
             display: flex;
-        }
-    }
-    .popover-container {
-        .ad-menu-list {
         }
     }
 }
