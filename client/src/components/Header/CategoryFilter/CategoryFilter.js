@@ -1,5 +1,4 @@
 import React, { useContext, useState } from 'react'
-import Button from '@material-ui/core/Button'
 import ClickAwayListener from '@material-ui/core/ClickAwayListener'
 import Grow from '@material-ui/core/Grow'
 import Paper from '@material-ui/core/Paper'
@@ -32,8 +31,7 @@ export const CategoryFilter = () => {
 	const [open, setOpen] = React.useState(false)
 	const anchorRef = React.useRef(null)
 	const [state, dispatch] = useContext(FilterContext)
-	const { ads } = state
-	const [filter, setfilter] = useState(ALL)
+	const { ads, filter } = state
 
 	let filterValues = filterAds(ads, adType)
 		.map(({ categoryFilter }) => categoryFilter)
@@ -45,7 +43,6 @@ export const CategoryFilter = () => {
 	if (!filterValues.includes(ALL)) filterValues.push(ALL)
 
 	const onFilterChange = (filterValue) => {
-		setfilter(filterValue)
 		dispatch({
 			type: 'CHANGE_CATEGORY_FILTER',
 			payload: filterValue

@@ -8,9 +8,10 @@ import MultiAd from '../MultiAd'
 import './AdContainer.scss'
 
 export const AdContainer = ({ config, adMenu }) => {
-	const adType = getAdType()
+	// const adType = getAdType()
 	const [state, dispatch] = useContext(FilterContext)
-	const { ads, filter } = state
+	const { ads, filter, selectedMenu } = state
+	const adType = selectedMenu ? selectedMenu.key : 'localAd'
 
 	const refAds = config.map((adConfig) => {
 		return { ...adConfig, ref: useRef() }

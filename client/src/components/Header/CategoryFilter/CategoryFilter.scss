@@ -1,5 +1,5 @@
 .category-filter {
-    left: 75%;
+    left: 60%;
     display: inline;
     position: relative;
 
@@ -16,8 +16,8 @@
     }
 }
 
-@media only screen and (min-width:0px) and (max-width:576px) {
-    .category-filter{
+@media only screen and (min-width: 0px) and (max-width: 576px) {
+    .category-filter {
         left: 48%;
     }
 }

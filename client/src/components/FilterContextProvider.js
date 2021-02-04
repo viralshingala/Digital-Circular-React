@@ -1,4 +1,4 @@
-import React, { useReducer, createContext, useRef } from 'react'
+import React, { useReducer, createContext } from 'react'
 import { ALL, LOCAL } from '../utils/appConstants'
 
 export const FilterContext = createContext([{}, () => {}])
@@ -20,7 +20,7 @@ const reducer = (state, action) => {
 		case 'CHANGE_AD_TYPE':
 			return {
 				...state,
-				adType: action.payload
+				selectedMenu: action.payload
 			}
 		case 'CHANGE_CATEGORY_FILTER':
 			return {

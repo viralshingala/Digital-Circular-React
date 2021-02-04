@@ -2,7 +2,7 @@ export const adMenu = {
 	localAd: {
 		label: 'Local Ad',
 		key: 'localAd',
-		validity: 'Valid Dec 28 - Jan 31',
+		validity: 'Valid Feb 28 - Mar 31',
 		imageId: 'US_202101_PLNR_CIRC-Thumbnail_x2'
 	},
 	specialty: {

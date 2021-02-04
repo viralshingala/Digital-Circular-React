@@ -8,6 +8,7 @@ import AdMenuItem from './AdMenuItem'
 import { FilterContext } from '../../FilterContextProvider'
 import { Link } from 'react-router-dom'
 import './AdMenu.scss'
+import { ALL } from '../../../utils/appConstants'
 
 export const AdMenu = ({ adMenu }) => {
 	const [state, dispatch] = useContext(FilterContext)
@@ -30,10 +31,21 @@ export const AdMenu = ({ adMenu }) => {
 		}
 	}, [thumbnail])
 
-	const onFilterChange = (adType) => {
+	useEffect(() => {
 		dispatch({
 			type: 'CHANGE_AD_TYPE',
-			payload: adType
+			payload: adMenu.localAd
+		})
+	}, [])
+
+	const onFilterChange = (selectedMenu) => {
+		dispatch({
+			type: 'CHANGE_AD_TYPE',
+			payload: selectedMenu
+		})
+		dispatch({
+			type: 'CHANGE_CATEGORY_FILTER',
+			payload: ALL
 		})
 		setActiveMenu(null)
 		setAnchorEl(null)
@@ -90,7 +102,7 @@ export const AdMenu = ({ adMenu }) => {
 								const imageSrc = URL_CONFIG.menuImageUrl.replace('MENU_IMAGE_ID', menuItem.imageId)
 								return (
 									<Link to={`?ad=${menuItem.key}`} key={getTokenKey()} className='list-decortn'>
-										<ListItem className='list-hvr-color' onClick={() => onFilterChange(menuItem.label)} data-target='ad-menu' button onMouseEnter={() => handlePopoverOpen(adMenu[key])} onMouseLeave={handlePopoverClose}>
+										<ListItem className='list-hvr-color' onClick={() => onFilterChange(menuItem)} data-target='ad-menu' button onMouseEnter={() => handlePopoverOpen(adMenu[key])} onMouseLeave={handlePopoverClose}>
 											<div className='ad-menu-item'>
 												<div className='image'>
 													<img src={imageSrc} className='ad-menu-img' />
