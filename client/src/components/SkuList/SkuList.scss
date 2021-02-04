@@ -40,4 +40,22 @@
     .MuiButtonBase-root{
         margin-left:4px
     }
+
+    .popup-btn{
+        .MuiButtonBase-root{
+            font-size: 0.8rem;
+        }
+    }
+}
+
+@media only screen and (min-width:0px) and (max-width:576px) {
+    .sku-list{
+        .mbl-popup-img{
+            max-width: 60%;
+        }
+        .MuiGrid-grid-xs-12{
+            margin-right: -20%;
+            flex-basis: 50%;
+        }
+    }
 }

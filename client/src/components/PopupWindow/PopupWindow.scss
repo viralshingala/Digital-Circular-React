@@ -12,3 +12,14 @@
         max-width: 700px !important;
     }
 }
+
+.close-icon-styl{
+    font-size: 2rem !important;
+}
+@media only screen and (min-width:0px) and (max-width:576px) {
+    .ad-modal{
+        .MuiPaper-root{
+            min-width: 400px !important;
+        }
+    }
+}

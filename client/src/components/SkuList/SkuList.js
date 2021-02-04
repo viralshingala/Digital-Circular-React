@@ -51,10 +51,10 @@ export const SkuList = ({ list }) => {
 				const imageSrc = URL_CONFIG.skuUrl.replace('SKU_ID', skuItem.sku)
 				return (
 					<Grid container key={getTokenKey()}>
-						<Grid className='sku-img-align' item md={5}>
-							<img style={{ cursor: 'pointer' }} src={imageSrc} onClick={() => onImageClick(skuItem)} />
+						<Grid className='sku-img-align' item md={4} sm={4} xs={12}>
+							<img className='mbl-popup-img' style={{ cursor: 'pointer' }} src={imageSrc} onClick={() => onImageClick(skuItem)} />
 						</Grid>
-						<Grid item md={7}>
+						<Grid item md={7} xs={8} sm={8}>
 							<h2 className='offer-msg'>{skuItem.offerMessage}</h2>
 							<p>
 								<strong>{skuItem.offerDescription}</strong>
@@ -62,7 +62,7 @@ export const SkuList = ({ list }) => {
 							<p className='ofr-disclaimer'>
 								<small>{skuItem.disclaimer}</small>
 							</p>
-							<p>
+							<p className='popup-btn'>
 								{skuItem.buttonConf.map((btn) => {
 									return <React.Fragment key={getTokenKey()}>{renderBtn(btn)}</React.Fragment>
 								})}{' '}
