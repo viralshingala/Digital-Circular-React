@@ -15,7 +15,7 @@ export const ThumbnailRow = ({ activeMenuKey, thumbnail, page, isLast, extraPage
 	}
 
 	return (
-		<div className='column' onMouseEnter={handleMouseHover} onMouseLeave={handleMouseHover} onClick={onClick}>
+		<div className='thumbnail-column-ad' onMouseEnter={handleMouseHover} onMouseLeave={handleMouseHover} onClick={onClick}>
 			<Link to={`?ad=${activeMenuKey}#goto_page${page}`}>
 				<img className={`thumbnail-image ${isHovering && 'thumbnail-image-hover'} ${isLast && 'last-item'}`} src={`${URL_CONFIG.baseUrl}${thumbnail}`} />
 				{!isLast && isHovering ? (

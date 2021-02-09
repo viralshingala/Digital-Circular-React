@@ -6,7 +6,7 @@ import './AdMenuItem.scss'
 export const AdMenuItem = ({ list, menuItems, activeMenuKey, colCount, onClick }) => {
 	const renderRow = (listItems) => {
 		return (
-			<section>
+			<section className='menu-ad-section'>
 				{listItems.map(({ thumbnail, page, ...rest }) => (
 					<ThumbnailRow key={getTokenKey()} activeMenuKey={activeMenuKey} thumbnail={thumbnail} page={page} {...rest} onClick={onClick} />
 				))}

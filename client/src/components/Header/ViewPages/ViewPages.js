@@ -38,7 +38,7 @@ export const ViewPages = () => {
 
 	const renderRow = (listItems) => {
 		return (
-			<section>
+			<section className='menu-ad-section'>
 				{listItems.map(({ thumbnail, page, ...rest }) => (
 					<ThumbnailRow key={getTokenKey()} activeMenuKey={adType} thumbnail={thumbnail} page={page} {...rest} onClick={()=> onThumbnailClick(ALL)} />
 				))}
