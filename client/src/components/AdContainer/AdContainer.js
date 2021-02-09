@@ -8,13 +8,13 @@ import MultiAd from '../MultiAd'
 import './AdContainer.scss'
 
 export const AdContainer = ({ config, adMenu }) => {
-	// const adType = getAdType()
+	const adType = getAdType()
 	const [state, dispatch] = useContext(FilterContext)
 	const { ads, filter, selectedMenu } = state
-	const adType = selectedMenu ? selectedMenu.key : 'localAd'
+	//const adType = selectedMenu ? selectedMenu.key : 'localAd'
 
 	const refAds = config.map((adConfig) => {
-		return { ...adConfig, ref: useRef() }
+		return { ...adConfig, ref: useRef() }  //setting ref for each object/page
 	})
 
 	useEffect(() => {
@@ -45,7 +45,7 @@ export const AdContainer = ({ config, adMenu }) => {
 
 	return (
 		<>
-			<Header adMenu={adMenu} adConfig={config} />
+			<Header adMenu={adMenu} config={config} />
 			<Grid container spacing={0}>
 				{filterAds(ads, adType, filter).map((adConf) => {
 					return Array.isArray(adConf.config) ? <MultiAd ref={adConf.ref} config={adConf.config} key={getTokenKey()} /> : <FullWidth ref={adConf.ref} config={adConf.config} key={getTokenKey()} />

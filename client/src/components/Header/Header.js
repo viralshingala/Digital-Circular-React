@@ -9,7 +9,7 @@ import './Header.scss'
 export const Header = ({ adMenu, config }) => {
 	return (
 		<div>
-			<Grid container spacing={0}>
+			<Grid container spacing={0} className='filtr-nav'>
 				<AdMenu adMenu={adMenu} />
 				<ViewPages adConfig={config} />
 				<CategoryFilter />

@@ -60,7 +60,11 @@ export const AdMenu = ({ adMenu }) => {
 		setActiveMenu(adMenu)
 	}
 
-	const onThumbnailClick = (page) => {
+	const onThumbnailClick = (selectedFilter) => {
+		dispatch({
+			type: 'CHANGE_CATEGORY_FILTER',
+			payload: selectedFilter
+		})
 		setActiveMenu(null)
 		setAnchorEl(null)
 	}
@@ -76,10 +80,10 @@ export const AdMenu = ({ adMenu }) => {
 
 	return (
 		<div className='ad-menu'>
-			<div className='selected-menu' onClick={handleClick}>
-				<span className='selected-menu-label'>{adMenu[adType].label}</span>
-				<i className={`arrow ${open ? 'up' : 'down'}`}></i>
-				<span className='validity'>{adMenu[adType].validity}</span>
+			<div className='selected-menu' >
+				<span className='selected-menu-label' onClick={handleClick}>{adMenu[adType].label}</span>
+                <i className={`drpdwn-arrow ${open ? 'up' : 'down'}`} onClick={handleClick}></i>
+				<span className='date-valdty'>{adMenu[adType].validity}</span>
 			</div>
 			<Popover
 				id={id}
@@ -122,7 +126,7 @@ export const AdMenu = ({ adMenu }) => {
 						</List>
 					</div>
 
-					<div className='ad-sub-menu'>{activeMenu && ads ? <AdMenuItem list={ads.filter((el) => el.type === activeMenu.key)} menuItems={2} activeMenuKey={activeMenu.key} colCount={6} onClick={onThumbnailClick} /> : null}</div>
+					<div className='ad-sub-menu'>{activeMenu && ads ? <AdMenuItem list={ads.filter((el) => el.type === activeMenu.key)} menuItems={2} activeMenuKey={activeMenu.key} colCount={6} onClick={()=> onThumbnailClick(ALL)} /> : null}</div>
 				</div>
 			</Popover>
 		</div>

@@ -34,7 +34,7 @@ export const CategoryFilter = () => {
 	const { ads, filter } = state
 
 	let filterValues = filterAds(ads, adType)
-		.map(({ categoryFilter }) => categoryFilter)
+		.map(({ categoryFilter }) => categoryFilter) //from json 
 		.reduce((acc, val) => acc.concat(val), [])
 		.reduce((unique, item) => (unique.includes(item) ? unique : [...unique, item]), [])
 		.sort((a, b) => {
@@ -42,11 +42,15 @@ export const CategoryFilter = () => {
 		})
 	if (!filterValues.includes(ALL)) filterValues.push(ALL)
 
-	const onFilterChange = (filterValue) => {
+	const onFilterChange = (filterValue, adtp) => {
 		dispatch({
 			type: 'CHANGE_CATEGORY_FILTER',
 			payload: filterValue
 		})
+		// dispatch({
+		// 	type: 'CHANGE_AD_TYPE',
+		// 	payload: adtp
+		// })
 		setOpen(false)
 	}
 
@@ -81,16 +85,17 @@ export const CategoryFilter = () => {
 	return (
 		<div className={classes.root} className='category-filter'>
 			<div className='catgry-text' ref={anchorRef} aria-controls={open ? 'menu-list-grow' : undefined} aria-haspopup='true' onClick={handleToggle}>
-				Category:<span className='slctd-catgry-text'>{filter}</span> <i className={`arrow ${open ? 'up' : 'down'}`}></i>
+				Category:<span className='slctd-catgry-text'>{filter}</span> 
+				<i className={`drpdwn-arrow ${open ? 'up' : 'down'}`}></i>
 			</div>
-			<Popper className='catgry-box-shd' open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
+			<Popper className='catgry-dropdwnp-menu' open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
 				{({ TransitionProps, placement }) => (
 					<Grow {...TransitionProps} style={{ transformOrigin: placement === 'bottom' ? 'center top' : 'center bottom' }}>
 						<Paper>
 							<ClickAwayListener onClickAway={handleClose}>
 								<MenuList autoFocusItem={open} id='menu-list-grow' onKeyDown={handleListKeyDown} className={classes.customWidth}>
 									{filterValues.map((filterValue) => (
-										<MenuItem key={getTokenKey()} onClick={() => onFilterChange(filterValue)}>
+										<MenuItem key={getTokenKey()} onClick={() => onFilterChange(filterValue, adType)}>
 											{filterValue}
 										</MenuItem>
 									))}

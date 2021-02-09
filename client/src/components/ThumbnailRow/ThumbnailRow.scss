@@ -1,5 +1,5 @@
 .column {
-    margin: 5px;
+    margin: 2px;
     flex-grow: 1;
     flex-shrink: 1;
     flex-basis: 0;
@@ -54,5 +54,6 @@
         top: 40%;
         right: 27px;
         font-weight: bold;
+        background: transparent;
     }
 }

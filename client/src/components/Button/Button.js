@@ -14,7 +14,9 @@ export const PrimaryButton = withStyles(() => ({
 		...commonButtonStyle,
 		backgroundColor: '#007DB4',
 		'&:hover': {
-			backgroundColor: '#007DB4'
+			backgroundColor: '#007DB4',
+			textDecoration:'underline'
+			
 		}
 	}
 }))(Button)
@@ -24,7 +26,8 @@ export const SecondaryButton = withStyles(() => ({
 		...commonButtonStyle,
 		backgroundColor: '#4A4A4A',
 		'&:hover': {
-			backgroundColor: '#4A4A4A'
+			backgroundColor: '#4A4A4A',
+			textDecoration:'underline'
 		}
 	}
 }))(Button)

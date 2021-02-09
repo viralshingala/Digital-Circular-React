@@ -4,6 +4,7 @@ import { filterAds, getAdType, getChunks, getTokenKey } from '../../../utils/uti
 import { FilterContext } from '../../FilterContextProvider'
 import ThumbnailRow from '../../ThumbnailRow'
 import './ViewPages.scss'
+import { ALL } from '../../../utils/appConstants'
 
 export const ViewPages = () => {
 	const [state, dispatch] = useContext(FilterContext)
@@ -16,12 +17,22 @@ export const ViewPages = () => {
 		setAnchorEl(event.currentTarget)
 	}
 
-	const handlePopoverClose = () => {
+	const handlePopoverClose = (event) => {
+		// if (event.currentTarget.getAttribute('data-target') !== 'view-pgs') {
+		// 	setAnchorEl(null)
+		// }
 		console.log('handlePopoverClose')
 		setAnchorEl(null)
 	}
+	// const onClick = () => {
+	// 	setAnchorEl(null)
+	// }
 
-	const onClick = () => {
+	const onThumbnailClick = (selectedFilter) => {
+		dispatch({
+			type: 'CHANGE_CATEGORY_FILTER',
+			payload: selectedFilter
+		})
 		setAnchorEl(null)
 	}
 
@@ -29,7 +40,7 @@ export const ViewPages = () => {
 		return (
 			<section>
 				{listItems.map(({ thumbnail, page, ...rest }) => (
-					<ThumbnailRow key={getTokenKey()} activeMenuKey={adType} thumbnail={thumbnail} page={page} {...rest} onClick={onClick} />
+					<ThumbnailRow key={getTokenKey()} activeMenuKey={adType} thumbnail={thumbnail} page={page} {...rest} onClick={()=> onThumbnailClick(ALL)} />
 				))}
 			</section>
 		)
@@ -58,7 +69,7 @@ export const ViewPages = () => {
 	const open = Boolean(anchorEl)
 
 	return (
-		<div className='view-pages' onMouseEnter={handleMouseHover}>
+		<div className='view-pages' onMouseEnter={handleMouseHover} onMouseLeave={handlePopoverClose}>
 			View Pages
 			<Popover
 				disableRestoreFocus
@@ -72,6 +83,7 @@ export const ViewPages = () => {
 				}}
 				open={open}
 				anchorEl={anchorEl}
+				className='view-pgs-parent'
 			>
 				<div className='view-pages-popover' onMouseLeave={handlePopoverClose}>
 					{renderChunks()}

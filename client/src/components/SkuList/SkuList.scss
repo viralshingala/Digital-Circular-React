@@ -35,7 +35,7 @@
         margin-right: 2%;
     }
     // .sku-img-align{
-    //     margin-left: -25px;
+    //     margin-left: -7px;
     // }
     .MuiButtonBase-root{
         margin-left:4px
@@ -43,7 +43,7 @@
 
     .popup-btn{
         .MuiButtonBase-root{
-            font-size: 0.8rem;
+            font-size: 1.0rem;
         }
     }
 }
@@ -56,6 +56,11 @@
         .MuiGrid-grid-xs-12{
             margin-right: -20%;
             flex-basis: 50%;
+        }
+        .popup-btn{
+            .MuiButtonBase-root{
+                font-size: 0.9rem;
+            }
         }
     }
 }

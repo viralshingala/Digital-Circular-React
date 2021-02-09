@@ -1,42 +1,55 @@
 .view-pages {
-    left: 70%;
+    left: 60%;
     display: inline;
     position: relative;
-    //top: 6px;
-    .view-pages-popover {
-        section {
-            margin: 0 auto;
-            display: flex;
-            .column {
-                margin: 5px;
-                flex-grow: 1;
-                flex-shrink: 1;
-                flex-basis: 0;
-                position: relative;
-                z-index: 1;
-                // Extra
-
-                // padding: 10px 0;
-                text-align: center;
-
-                .thumbnail-image:hover {
-                    opacity: 0.1;
-                }
-
-                .last-item {
-                    opacity: 0.1;
-                }
-
-                .show-extra {
-                    z-index: 2;
-                    position: absolute;
-                    //top: 50%;
-                    left: 50%;
-                }
-            }
-        }
-    }
+    font-size: 16px;
+   
 }
+.view-pgs-parent{
+    
+        left: 40pt !important;
+        .MuiPaper-elevation8{
+            box-shadow: rgba(0, 0, 0, 0.28) 0px 13px 8pt 3px;
+        }
+
+}
+    //top: 6px;
+//     .view-pages-popover {
+//         section {
+//             margin: 0 auto;
+//             display: flex;
+//             .column {
+//                 margin: 5px;
+//                 flex-grow: 1;
+//                 flex-shrink: 1;
+//                 flex-basis: 0;
+//                 position: relative;
+//                 z-index: 1;
+//                 // Extra
+
+//                 // padding: 10px 0;
+//                 text-align: center;
+
+//                 .thumbnail-image:hover {
+//                     opacity: 0.1;
+//                 }
+
+//                 .last-item {
+//                     opacity: 0.1;
+//                 }
+
+//                 .show-extra {
+//                     z-index: 2;
+//                     position: absolute;
+//                     //top: 50%;
+//                     left: 50%;
+//                 }
+//             }
+//         }
+//     }
+   
+// }
+
 
 @media only screen and (min-width: 0px) and (max-width: 1199px) {
     .view-pages {

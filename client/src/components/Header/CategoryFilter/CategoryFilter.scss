@@ -1,43 +1,84 @@
 .category-filter {
-    left: 60%;
+    left: 64%;
     display: inline;
     position: relative;
 
-    .title-link:hover {
-        text-decoration: underline;
-    }
-    .catgry-box-shd {
+    // .title-link:hover {
+    //     text-decoration: underline;
+    // }
+    .catgry-dropdwnp-menu {
         box-shadow: rgba(0, 0, 0, 0.28) 0px 13px 8pt 3px;
+        min-width: 100%;
+        left: 9px !important;
+        .MuiList-padding {
+            // margin-top: 3px;
+            // padding-bottom: 0px;
+            // padding-top: 0px;
+        }
+        .MuiListItem-root{
+        margin-right: 23px;
+        left: 18%;
+        margin-top: 5px;
+        font-size: 16px;
+        text-decoration: none;
+        }
+        .MuiListItem-root:hover{
+            background-color: white !important;
+        }
+        .MuiPaper-elevation1{
+            border-radius: 0;
+        }
     }
     .catgry-text {
         cursor: pointer;
+        font-size: 16px;;
         .slctd-catgry-text {
-            text-transform: capitalize !important;
+           // text-transform: capitalize !important;
             text-decoration: underline;
         }
-        .arrow {
-            border: solid black;
-            border-width: 0 3px 3px 0;
+        .drpdwn-arrow {
             display: inline-block;
-            padding: 3px;
-
+            left: 7%;
+            width: 8px;
+            height: 8px;
+            border-right: 2px solid #212529;
+            border-bottom: 2px solid #212529;
+            position: relative;
+    
             &.up {
                 transform: rotate(-135deg);
-                transition-duration: 0.5s;
-                -webkit-transform: rotate(-135deg);
+                transition: all .2s ease-in-out;
             }
-
+    
             &.down {
                 transform: rotate(45deg);
-                transition-duration: 0.5s;
-                -webkit-transform: rotate(45deg);
+                transition: all .2s ease-in-out;
             }
         }
     }
 }
 
 @media only screen and (min-width: 0px) and (max-width: 576px) {
-    .category-filter {
-        left: 48%;
+.category-filter {
+        left: 27%;
     }
+
+    .catgry-dropdwnp-menu {
+        background-color: white !important;
+        .MuiListItem-root{
+            padding-left: 25%;
+            border: 1px solid #127DB4;
+            margin: 3px;
+            float: left;
+            border-radius: 40px;
+            text-align: center;
+            margin-top: 19px;
+            padding: 10px 20px;
+            color: #127DB4;
+            margin-right: 7px;
+        }
+    }
+
 }
+
+
