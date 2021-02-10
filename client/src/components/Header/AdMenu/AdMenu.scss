@@ -144,10 +144,14 @@
 @media only screen and (min-width: 0px) and (max-width: 576px) {
 
 .ad-menu {
+    flex-basis: 50%;
     .date-valdty{
         display: flex;
        padding-left: 0;
     }
+}
+.ad-menu-items {
+    width: 100vw;
 }
 .ad-menu-popover{
     .MuiPaper-root {
@@ -157,18 +161,43 @@
     }
 }
 .ad-menu-container {
-    margin-top: 7%;
+    margin-top: 5%;
 }
 
 .ad-menu-list {
     .ad-menu-item {
-        .image {
-            margin-left: 14px;
-        }
-        .content {
-            margin-left: 14px;
+        // .image {
+        //     margin-left: 14px;
+        // }
+        // .content {
+        //     margin-left: 14px;
 
-            }
+        //     }
         }
+    }
+}
+
+@media only screen and (min-width:577px) and (max-width: 768px) {
+    .ad-menu {
+        flex-basis: 70%;
+        .date-valdty{
+            display: flex;
+           padding-left: 0;
+        }
+    }
+
+    .ad-menu-items {
+        width: 100vw;
+    }
+
+    .ad-menu-popover{
+        .MuiPaper-root {
+            margin-left: -12px !important;
+            min-width: 100%;
+            box-shadow: rgb(0 0 0 / 28%) 0px 13px 8pt 3px;
+        }
+    }
+    .ad-menu-container {
+        margin-top: 22px;
     }
 }

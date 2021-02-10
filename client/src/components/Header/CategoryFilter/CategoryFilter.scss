@@ -60,11 +60,24 @@
 
 @media only screen and (min-width: 0px) and (max-width: 576px) {
 .category-filter {
-        left: 27%;
-    }
+        left: 0;
+        flex-basis: 50%;
+
 
     .catgry-dropdwnp-menu {
         background-color: white !important;
+       width: 100vw;
+       left: -50% !important;
+       padding-bottom: 7px;
+       top: 19px !important;
+
+       .MuiList-root {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+       }
+
         .MuiListItem-root{
             padding-left: 25%;
             border: 1px solid #127DB4;
@@ -76,9 +89,44 @@
             padding: 10px 20px;
             color: #127DB4;
             margin-right: 7px;
+            left: 0;
         }
+    }
+}
+
+}
+@media only screen and (min-width:577px) and (max-width: 768px) {
+    .category-filter {
+        left: 0;
+        flex-basis: 30%;
+        .catgry-dropdwnp-menu {
+            background-color: white !important;
+           width: 100vw;
+           left: -116% !important;
+           padding-bottom: 7px;
+           top: 19px !important;
+           
+           .MuiList-root {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+           }
+    
+            .MuiListItem-root{
+                padding-left: 25%;
+                border: 1px solid #127DB4;
+                margin: 3px;
+                float: left;
+                border-radius: 40px;
+                text-align: center;
+                margin-top: 19px;
+                padding: 10px 20px;
+                color: #127DB4;
+                margin-right: 3%;
+                left: 0;
+            }
+    }
     }
 
 }
-
-

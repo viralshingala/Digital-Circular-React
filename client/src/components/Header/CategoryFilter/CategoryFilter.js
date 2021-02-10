@@ -42,20 +42,16 @@ export const CategoryFilter = () => {
 		})
 	if (!filterValues.includes(ALL)) filterValues.push(ALL)
 
-	const onFilterChange = (filterValue, adtp) => {
+	const onFilterChange = (filterValue) => {
 		dispatch({
 			type: 'CHANGE_CATEGORY_FILTER',
 			payload: filterValue
 		})
-		// dispatch({
-		// 	type: 'CHANGE_AD_TYPE',
-		// 	payload: adtp
-		// })
 		setOpen(false)
 	}
 
 	const handleToggle = () => {
-		setOpen((prevOpen) => !prevOpen)// or (!open)
+		setOpen((prevOpen) => !prevOpen)
 	}
 
 	const handleClose = (event) => {
@@ -95,7 +91,7 @@ export const CategoryFilter = () => {
 							<ClickAwayListener onClickAway={handleClose}>
 								<MenuList autoFocusItem={open} id='menu-list-grow' onKeyDown={handleListKeyDown} className={classes.customWidth}>
 									{filterValues.map((filterValue) => (
-										<MenuItem key={getTokenKey()} onClick={() => onFilterChange(filterValue, adType)}>
+										<MenuItem key={getTokenKey()} onClick={() => onFilterChange(filterValue)}>
 											{filterValue}
 										</MenuItem>
 									))}
