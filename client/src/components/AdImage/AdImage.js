@@ -5,10 +5,19 @@ import SkuList from '../SkuList'
 import Card from '@material-ui/core/Card'
 import CardMedia from '@material-ui/core/CardMedia'
 import './AdImage.scss'
+import { CONTENT } from '../../utils/appConstants'
 
 export const AdImage = ({ config }) => {
-	const { navigation, imageId, alt } = config
-	const imageSrc = URL_CONFIG.baseImageUrl.replace('IMAGE_ID', imageId)
+	const { navigation, imageId, alt, imageFrom } = config
+	
+	var imageSrc= null;
+
+	if(imageFrom === CONTENT){
+	 imageSrc = URL_CONFIG.contentUrl.replace('IMAGE_ID', imageId)
+	}
+	else{
+		imageSrc = URL_CONFIG.baseImageUrl.replace('IMAGE_ID', imageId)
+	}
 	const [showPopUp, setShowPopUp] = useState()
 
 	const onImageClick = () => {

@@ -13,14 +13,7 @@ const App = () => {
 		<div className='ad-app'>
 			<Router>
 				<FilterContextProvider>
-					<Switch>
-						<Route exact path='/'>
-							<AdContainer config={AD_CONFIG} adMenu={adMenu} />
-						</Route>
-						<Route path='/local-ad'>
-							<AdContainer config={AD_CONFIG} adMenu={adMenu} />
-						</Route>
-					</Switch>
+						<AdContainer config={AD_CONFIG} adMenu={adMenu} />
 				</FilterContextProvider>
 			</Router>
 		</div>

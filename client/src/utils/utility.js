@@ -30,7 +30,7 @@ export const filterAds = (ads, type, category) => {
 	}
 
 	if (category && category !== ALL) {
-		result = ads.filter((ad) => ad.categoryFilter.includes(category))
+		result = result.filter((ad) => ad.categoryFilter.includes(category))
 	}
 
 	return result

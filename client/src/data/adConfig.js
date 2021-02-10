@@ -21,6 +21,7 @@ export const AD_CONFIG = [
 		thumbnail: 'US-202101-P1-Index-Thumbnail_x2',
 		config: {
 			imageId: 'US-202101_pg1_ad1_x3',
+			imageFrom:'',
 			alt: 'dog_image_1',
 			popUp: [
 				{

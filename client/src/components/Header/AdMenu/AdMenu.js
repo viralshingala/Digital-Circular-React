@@ -8,7 +8,7 @@ import AdMenuItem from './AdMenuItem'
 import { FilterContext } from '../../FilterContextProvider'
 import { Link } from 'react-router-dom'
 import './AdMenu.scss'
-import { ALL } from '../../../utils/appConstants'
+import { ALL, CONTENT } from '../../../utils/appConstants'
 
 export const AdMenu = ({ adMenu }) => {
 	const [state, dispatch] = useContext(FilterContext)
@@ -21,28 +21,7 @@ export const AdMenu = ({ adMenu }) => {
 	const handleClick = (event) => {
 		setAnchorEl(event.currentTarget)
 	}
-
-	useEffect(() => {
-		if (thumbnail) {
-			dispatch({
-				type: 'SCROLL_TO_IMAGE',
-				payload: thumbnail
-			})
-		}
-	}, [thumbnail])
-
-	useEffect(() => {
-		dispatch({
-			type: 'CHANGE_AD_TYPE',
-			payload: adMenu.localAd
-		})
-	}, [])
-
-	const onFilterChange = (selectedMenu) => {
-		dispatch({
-			type: 'CHANGE_AD_TYPE',
-			payload: selectedMenu
-		})
+	const onFilterChange = () => {
 		dispatch({
 			type: 'CHANGE_CATEGORY_FILTER',
 			payload: ALL
@@ -105,10 +84,18 @@ export const AdMenu = ({ adMenu }) => {
 						<List component='nav' aria-label='contacts' className='ad-menu-list'>
 							{Object.keys(adMenu).map((key) => {
 								const menuItem = adMenu[key]
-								const imageSrc = URL_CONFIG.menuImageUrl.replace('MENU_IMAGE_ID', menuItem.imageId)
+								var imageSrc= null;
+								if(menuItem.imageFrom === CONTENT){
+									imageSrc = URL_CONFIG.menuContentUrl.replace('MENU_IMAGE_ID', menuItem.imageId)
+								}
+								else{
+									imageSrc = URL_CONFIG.menuImageUrl.replace('MENU_IMAGE_ID', menuItem.imageId)
+								}
+
+								//const imageSrc = URL_CONFIG.menuImageUrl.replace('MENU_IMAGE_ID', menuItem.imageId)
 								return (
 									<Link to={`?ad=${menuItem.key}`} key={getTokenKey()} className='list-decortn'>
-										<ListItem className='list-hvr-color' onClick={() => onFilterChange(menuItem)} data-target='ad-menu' button onMouseEnter={() => handlePopoverOpen(adMenu[key])} onMouseLeave={handlePopoverClose}>
+										<ListItem className='list-hvr-color' onClick={onFilterChange} data-target='ad-menu' button onMouseEnter={() => handlePopoverOpen(adMenu[key])} onMouseLeave={handlePopoverClose}>
 											<div className='ad-menu-item'>
 												<div className='image'>
 													<img src={imageSrc} className='ad-menu-img' />

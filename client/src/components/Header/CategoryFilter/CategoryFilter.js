@@ -55,7 +55,7 @@ export const CategoryFilter = () => {
 	}
 
 	const handleToggle = () => {
-		setOpen((prevOpen) => !prevOpen)
+		setOpen((prevOpen) => !prevOpen)// or (!open)
 	}
 
 	const handleClose = (event) => {
