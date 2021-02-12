@@ -2,7 +2,7 @@
     .offer-msg {
         font-size: 1.8em;
         font-weight: 700;
-        line-height: 1.8rem !important;
+        line-height: 1.8rem ;
         font-family: "ProximaNova-A-Black";
         color: #003b49 !important;
         padding-top: 10px;
@@ -59,8 +59,13 @@
         }
         .popup-btn{
             .MuiButtonBase-root{
-                font-size: 0.9rem;
+                font-size: 0.988rem;
             }
+        }
+        .offer-msg {
+            font-size: 1.8em;
+            font-weight: 700;
+            line-height: 3.0rem;
         }
     }
 }

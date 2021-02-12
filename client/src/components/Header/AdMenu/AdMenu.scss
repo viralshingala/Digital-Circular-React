@@ -7,13 +7,16 @@
 .ad-menu-container {
     display: flex;
     overflow-y: hidden;
+    
     .ad-menu-items {
         .MuiList-root {
-            flex: 1;
+            //flex: 1;
+           
         }
         nav {
             background-color: #ecf6fa;
             padding: 0;
+            box-shadow: rgb(0 0 0 / 28%) -20px 2px 8pt 3px;
         }
         .ad-menu-list {
             .ad-menu-item {
@@ -74,19 +77,23 @@
     }
 }
 
-.ad-menu-block {
-    overflow: hidden;
-    .ad-menu-list {
-        display: inline;
-        float: left;
-    }
-    .thumbnail-popover {
-        float: left !important;
+// .ad-menu-block {
+//     overflow: hidden;
+//     .ad-menu-list {
+//         display: inline;
+//         float: left;
+//     }
+//     .thumbnail-popover {
+//         //float: left !important;
 
-        .thumbnail-image {
-            cursor: pointer;
-        }
-    }
+//         .thumbnail-image {
+//          //   cursor: pointer;
+//         }
+//     }
+// }
+.svg-ad-logo{
+    position: relative;
+    left: -12%;
 }
 
 .ad-menu {
@@ -96,9 +103,10 @@
         text-decoration: underline;
         font-size: 16px;
         cursor: pointer;
+        margin-left: -6%;
     }
     .date-valdty {
-        padding-left: 18pt;
+        padding-left: 40pt;
         font-size: 10pt;
     }
     .drpdwn-arrow {
@@ -134,55 +142,66 @@
             .ad-menu-img {
                 float: left;
             }
-            .ad-menu-text {
-            }
             display: flex;
         }
     }
 }
 
 @media only screen and (min-width: 0px) and (max-width: 576px) {
-
-.ad-menu {
-    flex-basis: 50%;
-    .date-valdty{
-        display: flex;
-       padding-left: 0;
+    .svg-ad-logo{
+        position: relative;
+        left: 0;
     }
-}
-.ad-menu-items {
-    width: 100vw;
-}
-.ad-menu-popover{
-    .MuiPaper-root {
-        margin-left: -4% !important;
-        min-width: 100%;
-        box-shadow: rgb(0 0 0 / 28%) 0px 13px 8pt 3px;
-    }
-}
-.ad-menu-container {
-    margin-top: 5%;
-}
-
-.ad-menu-list {
-    .ad-menu-item {
-        // .image {
-        //     margin-left: 14px;
-        // }
-        // .content {
-        //     margin-left: 14px;
-
-        //     }
+        .ad-menu {
+            flex-basis: 50%;
+            .date-valdty{
+                display: flex;
+                padding-left: 14%;
+            }
+            .selected-menu-label {
+                margin-left: 4%;
+            }
         }
-    }
+        .ad-menu-items {
+            width: 100vw;
+        }
+        .ad-menu-popover{
+            .MuiPaper-root {
+                margin-left: -4% !important;
+                min-width: 100%;
+                box-shadow: rgb(0 0 0 / 28%) 0px 13px 8pt 3px;
+            }
+        }
+        .ad-menu-container {
+            margin-top: 5%;
+        }
+
+        // .ad-menu-list {
+        //     .ad-menu-item {
+        //         // .image {
+        //         //     margin-left: 14px;
+        //         // }
+        //         // .content {
+        //         //     margin-left: 14px;
+
+        //         //     }
+        //         }
+        //     }
 }
 
 @media only screen and (min-width:577px) and (max-width: 768px) {
+    .svg-ad-logo{
+        position: relative;
+        left: 0%;
+    }
     .ad-menu {
         flex-basis: 70%;
         .date-valdty{
             display: flex;
-           padding-left: 0;
+            padding-left: 7%;
+        }
+        .selected-menu-label {
+            margin-left: 3%;
         }
     }
 
@@ -192,7 +211,7 @@
 
     .ad-menu-popover{
         .MuiPaper-root {
-            margin-left: -12px !important;
+            margin-left: -16px !important;
             min-width: 100%;
             box-shadow: rgb(0 0 0 / 28%) 0px 13px 8pt 3px;
         }

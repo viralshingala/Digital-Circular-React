@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import Popover from '@material-ui/core/Popover'
-import { getAdType, getTokenKey } from '../../../utils/utility'
+import { getAdType, getTokenKey, localSvg } from '../../../utils/utility'
 import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
 import URL_CONFIG from '../../../data/urlConfig'
@@ -14,8 +14,8 @@ export const AdMenu = ({ adMenu }) => {
 	const [state, dispatch] = useContext(FilterContext)
 	const { ads } = state
 	const adType = getAdType()
+	const localSVG = localSvg()
 	const [activeMenu, setActiveMenu] = useState(null)
-	const [thumbnail, setThumbnail] = useState()
 	const [anchorEl, setAnchorEl] = useState(null)
 
 	const handleClick = (event) => {
@@ -60,6 +60,7 @@ export const AdMenu = ({ adMenu }) => {
 	return (
 		<div className='ad-menu'>
 			<div className='selected-menu' >
+				<span className='svg-ad-logo'>{localSVG}</span>
 				<span className='selected-menu-label' onClick={handleClick}>{adMenu[adType].label}</span>
                 <i className={`drpdwn-arrow ${open ? 'up' : 'down'}`} onClick={handleClick}></i>
 				<span className='date-valdty'>{adMenu[adType].validity}</span>

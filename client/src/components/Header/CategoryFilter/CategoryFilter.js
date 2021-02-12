@@ -29,13 +29,13 @@ export const CategoryFilter = () => {
 	const classes = useStyles()
 	const adType = getAdType()
 	const [open, setOpen] = React.useState(false)
-	const [filterState, setFilterState] = React.useState(ALL)
+	const [filterState, setFilterState] = React.useState(ALL) 
 	const anchorRef = React.useRef(null)
 	const [state, dispatch] = useContext(FilterContext)
 	const { ads, filter } = state
 
 	let filterValues = filterAds(ads, adType)
-		.map(({ categoryFilter }) => categoryFilter) //from json
+		.map(({ categoryFilter }) => categoryFilter) //from json 
 		.reduce((acc, val) => acc.concat(val), [])
 		.reduce((unique, item) => (unique.includes(item) ? unique : [...unique, item]), [])
 		.sort((a, b) => {
@@ -83,7 +83,7 @@ export const CategoryFilter = () => {
 	return (
 		<div className={classes.root} className='category-filter'>
 			<div className='catgry-text' ref={anchorRef} aria-controls={open ? 'menu-list-grow' : undefined} aria-haspopup='true' onClick={handleToggle}>
-				Category:<span className='slctd-catgry-text'>{filter}</span>
+				Category:<span className='slctd-catgry-text'>{filter}</span> 
 				<i className={`drpdwn-arrow ${open ? 'up' : 'down'}`}></i>
 			</div>
 			<Popper className='catgry-dropdwnp-menu' open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>

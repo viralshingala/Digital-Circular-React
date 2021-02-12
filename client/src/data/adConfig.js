@@ -30,8 +30,8 @@ export const AD_CONFIG = [
 					disclaimer: 'Valid without Treats™ membership.',
 					sku: '5303924',
 					buttonConf: [
-						{ type: 'findStore', navigation: '/store-locator/' },
-						{ type: 'buyOnline', navigation: '/featured-shops/valentines-day/top-paw/?pmin=0.00&srule=best-sellers' }
+						{ type: 'findStore', navigation: 'https://www.petsmart.com/store-locator/' },
+						{ type: 'buyOnline', navigation: 'https://www.petsmart.com/featured-shops/valentines-day/top-paw/?pmin=0.00&srule=best-sellers' }
 					]
 				},
 				{
@@ -40,8 +40,8 @@ export const AD_CONFIG = [
 					disclaimer: 'Valid without Treats™ membership.',
 					sku: '5303960',
 					buttonConf: [
-						{ type: 'findStore', navigation: '/store-locator/' },
-						{ type: 'buyOnline', navigation: '/dog/toys/top-paw/?pmin=0.00&srule=best-sellers' }
+						{ type: 'findStore', navigation: 'https://www.petsmart.com/store-locator/' },
+						{ type: 'buyOnline', navigation: 'https://www.petsmart.com/dog/toys/top-paw/?pmin=0.00&srule=best-sellers' }
 					]
 				}
 			]
@@ -62,8 +62,8 @@ export const AD_CONFIG = [
 					disclaimer: 'Offer valid 12/28/20-1/31/21 with Treats™ membership. Discount taken on lowest priced qualifying item(s) purchased. Must be signed in to your Treats account prior to purchase or use Treats membership ID in stores at checkout. Prices & selection may vary by store & online. While supplies last. Mix & match allowed. Excludes WHIMZEES® bulk dental treats, NUTRO™, Greenies® & Pedigree®DENTASTIX™ dog treats.',
 					sku: '5303745',
 					buttonConf: [
-						{ type: 'findStore', navigation: '/store-locator/' },
-						{ type: 'buyOnline', navigation: '/dog/treats/#page_name=flyout&category=dog&cta=treats' }
+						{ type: 'findStore', navigation: 'https://www.petsmart.com/store-locator/' },
+						{ type: 'buyOnline', navigation: 'https://www.petsmart.com/dog/treats/#page_name=flyout&category=dog&cta=treats' }
 					]
 				}
 			]
@@ -78,40 +78,40 @@ export const AD_CONFIG = [
 			{
 				imageId: 'US-202101_pg3_ad1',
 				alt: 'dog_image_3-1',
-				navigation: '/store-locator/'
+				navigation: 'https://www.petsmart.com/store-locator/'
 			},
 			[
 				{
 					imageId: 'US-202101_pg3_ad2',
 					alt: 'dog_image_3-2',
-					navigation: '/store-locator/'
+					navigation: 'https://www.petsmart.com/store-locator/'
 				},
 				{
 					imageId: 'US-202101_pg3_ad3',
 					alt: 'dog_image_3-3',
-					navigation: '/store-locator/'
+					navigation: 'https://www.petsmart.com/store-locator/'
 				},
 				{
 					imageId: 'US-202101_pg3_ad4',
 					alt: 'dog_image_3-4',
-					navigation: '/featured-brands/nutro/dog/dry-food/?pmin=0.00&srule=best-sellers'
+					navigation: 'https://www.petsmart.com/featured-brands/nutro/dog/dry-food/?pmin=0.00&srule=best-sellers'
 				}
 			],
 			[
 				{
 					imageId: 'US-202101_pg3_ad5',
 					alt: 'dog_image_3-5',
-					navigation: '/store-locator/'
+					navigation: 'https://www.petsmart.com/store-locator/'
 				},
 				{
 					imageId: 'US-202101_pg3_ad6',
 					alt: 'dog_image_3-6',
-					navigation: '/featured-brands/simply-nourish/dry-food/dog/?pmin=0.00&srule=best-sellers&prefn1=customSeries&prefv1=Simply%20Nourish%20Natural%20Solutions'
+					navigation: 'https://www.petsmart.com/featured-brands/simply-nourish/dry-food/dog/?pmin=0.00&srule=best-sellers&prefn1=customSeries&prefv1=Simply%20Nourish%20Natural%20Solutions'
 				},
 				{
 					imageId: 'US-202101_pg3_ad7',
 					alt: 'dog_image_3-7',
-					navigation: '/store-locator/'
+					navigation: 'https://www.petsmart.com/store-locator/'
 				}
 			]
 		]
@@ -125,29 +125,29 @@ export const AD_CONFIG = [
 			{
 				imageId: 'US-202101_pg4_ad1',
 				alt: 'dog_image_4-1',
-				navigation: '/store-locator/'
+				navigation: 'https://www.petsmart.com/store-locator/'
 			},
 			[
 				{
 					imageId: 'US-202101_pg4_ad2',
 					alt: 'dog_image_4-2',
-					navigation: '/store-locator/'
+					navigation: 'https://www.petsmart.com/store-locator/'
 				},
 				{
 					imageId: 'US-202101_pg4_ad3',
 					alt: 'dog_image_4-3',
-					navigation: '/featured-brands/authority/dry-food/dog/?pmin=0.00&srule=best-sellers'
+					navigation: 'https://www.petsmart.com/featured-brands/authority/dry-food/dog/?pmin=0.00&srule=best-sellers'
 				},
 				{
 					imageId: 'US-202101_pg4_ad4',
 					alt: 'dog_image_4-4',
-					navigation: '/featured-brands/purina-one/dog/dry-food/?pmin=0.00&srule=best-sellers'
+					navigation: 'https://www.petsmart.com/featured-brands/purina-one/dog/dry-food/?pmin=0.00&srule=best-sellers'
 				}
 			],
 			{
 				imageId: 'US-202101_pg4_ad5',
 				alt: 'dog_image_4-5',
-				navigation: '/store-locator/'
+				navigation: 'https://www.petsmart.com/store-locator/'
 			}
 		]
 	},
@@ -167,8 +167,8 @@ export const AD_CONFIG = [
 						disclaimer: 'Offer valid 12/28/20-1/31/21 with Treats™ membership. Discount taken on lowest priced qualifying item(s) purchased. Must be signed in to your Treats account prior to purchase or use Treats membership ID in stores at checkout. Prices & selection may vary by store & online. While supplies last. Mix & match allowed.',
 						sku: '5279933',
 						buttonConf: [
-							{ type: 'findStore', navigation: '/store-locator/' },
-							{ type: 'buyOnline', navigation: '/dog/food/food-toppers/#page_name=flyout&category=dog&cta=foodtoppers' }
+							{ type: 'findStore', navigation: 'https://www.petsmart.com/store-locator/' },
+							{ type: 'buyOnline', navigation: 'https://www.petsmart.com/dog/food/food-toppers/#page_name=flyout&category=dog&cta=foodtoppers' }
 						]
 					}
 				]
@@ -183,7 +183,7 @@ export const AD_CONFIG = [
 							offerDescription: 'entire stock Wellness® dog food, 3 oz. pouches & tubs',
 							disclaimer: 'Must buy 4 to receive discount.',
 							sku: '5220091',
-							buttonConf: [{ type: 'findStore', navigation: '/store-locator/' }]
+							buttonConf: [{ type: 'findStore', navigation: 'https://www.petsmart.com/store-locator/' }]
 						}
 					]
 				},
@@ -196,7 +196,7 @@ export const AD_CONFIG = [
 							offerDescription: 'select Purina® Pro Plan® dog food, 13 oz. cans',
 							disclaimer: 'Must buy 8 to receive discount.',
 							sku: '5067191',
-							buttonConf: [{ type: 'findStore', navigation: '/store-locator/' }]
+							buttonConf: [{ type: 'findStore', navigation: 'https://www.petsmart.com/store-locator/' }]
 						}
 					]
 				},
@@ -209,7 +209,7 @@ export const AD_CONFIG = [
 							offerDescription: 'entire stock Bil-Jac® dog food, 13 oz. cans',
 							disclaimer: 'Must buy 4 to receive discount.',
 							sku: '5266784',
-							buttonConf: [{ type: 'findStore', navigation: '/store-locator/' }]
+							buttonConf: [{ type: 'findStore', navigation: 'https://www.petsmart.com/store-locator/' }]
 						}
 					]
 				}
@@ -224,7 +224,7 @@ export const AD_CONFIG = [
 							offerDescription: 'entire stock Rachael Ray™ Nutrish® dog food, 3.5-48 oz. tubs, cups, cans, & variety packs',
 							disclaimer: 'Offer valid 12/28/20-1/31/21 in stores only with Treats™ membership. Transaction total prior to taxes & after discounts are applied. Max value: $5. While supplies last. Prices & selection may vary by store. Excludes services.',
 							sku: '5277822',
-							buttonConf: [{ type: 'findStore', navigation: '/store-locator/' }]
+							buttonConf: [{ type: 'findStore', navigation: 'https://www.petsmart.com/store-locator/' }]
 						}
 					]
 				},
@@ -238,8 +238,8 @@ export const AD_CONFIG = [
 							disclaimer: 'Must buy 7 to receive discount.',
 							sku: '5127457',
 							buttonConf: [
-								{ type: 'findStore', navigation: '/store-locator/' },
-								{ type: 'buyOnline', navigation: '/featured-brands/purina-one/dog/canned-food/?pmin=0.00&srule=best-sellers' }
+								{ type: 'findStore', navigation: 'https://www.petsmart.com/store-locator/' },
+								{ type: 'buyOnline', navigation: 'https://www.petsmart.com/featured-brands/purina-one/dog/canned-food/?pmin=0.00&srule=best-sellers' }
 							]
 						}
 					]
@@ -254,8 +254,8 @@ export const AD_CONFIG = [
 							disclaimer: 'Must buy 8 to receive discount.',
 							sku: '5278696',
 							buttonConf: [
-								{ type: 'findStore', navigation: '/store-locator/' },
-								{ type: 'buyOnline', navigation: '/featured-brands/authority/canned-food/dog/?pmin=0.00&srule=best-sellers' }
+								{ type: 'findStore', navigation: 'https://www.petsmart.com/store-locator/' },
+								{ type: 'buyOnline', navigation: 'https://www.petsmart.com/featured-brands/authority/canned-food/dog/?pmin=0.00&srule=best-sellers' }
 							]
 						}
 					]
@@ -278,8 +278,8 @@ export const AD_CONFIG = [
 					disclaimer: 'Valid without Treats™ membership.',
 					sku: '5304468',
 					buttonConf: [
-						{ type: 'findStore', navigation: '/store-locator/' },
-						{ type: 'buyOnline', navigation: '/dog/collars-harnesses-and-leashes/top-paw/?pmin=0.00&srule=best-sellers' }
+						{ type: 'findStore', navigation: 'https://www.petsmart.com/store-locator/' },
+						{ type: 'buyOnline', navigation: 'https://www.petsmart.com/dog/collars-harnesses-and-leashes/top-paw/?pmin=0.00&srule=best-sellers' }
 					]
 				},
 				{
@@ -288,8 +288,8 @@ export const AD_CONFIG = [
 					disclaimer: 'Valid without Treats™ membership.',
 					sku: '5304319',
 					buttonConf: [
-						{ type: 'findStore', navigation: '/store-locator/' },
-						{ type: 'buyOnline', navigation: '/dog/clothing-and-shoes/top-paw/?pmin=0.00&srule=best-sellers' }
+						{ type: 'findStore', navigation: 'https://www.petsmart.com/store-locator/' },
+						{ type: 'buyOnline', navigation: 'https://www.petsmart.com/dog/clothing-and-shoes/top-paw/?pmin=0.00&srule=best-sellers' }
 					]
 				},
 				{
@@ -298,8 +298,8 @@ export const AD_CONFIG = [
 					disclaimer: 'Valid without Treats™ membership.',
 					sku: '5302334',
 					buttonConf: [
-						{ type: 'findStore', navigation: '/store-locator/' },
-						{ type: 'buyOnline', navigation: '/dog/clothing-and-shoes/sweaters-and-coats/top-paw/?pmin=0.00&srule=best-sellers' }
+						{ type: 'findStore', navigation: 'https://www.petsmart.com/store-locator/' },
+						{ type: 'buyOnline', navigation: 'https://www.petsmart.com/dog/clothing-and-shoes/sweaters-and-coats/top-paw/?pmin=0.00&srule=best-sellers' }
 					]
 				}
 			]
