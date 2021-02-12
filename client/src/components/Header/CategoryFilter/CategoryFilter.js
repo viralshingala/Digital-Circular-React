@@ -29,7 +29,7 @@ export const CategoryFilter = () => {
 	const classes = useStyles()
 	const adType = getAdType()
 	const [open, setOpen] = React.useState(false)
-	const [filterState, setFilterState] = React.useState(ALL) 
+	// const [filterState, setFilterState] = React.useState(ALL) 
 	const anchorRef = React.useRef(null)
 	const [state, dispatch] = useContext(FilterContext)
 	const { ads, filter } = state
@@ -48,7 +48,7 @@ export const CategoryFilter = () => {
 			type: 'CHANGE_CATEGORY_FILTER',
 			payload: filterValue
 		})
-		setFilterState(filterValue)
+		//setFilterState(filterValue)
 		setOpen(false)
 	}
 
@@ -93,7 +93,7 @@ export const CategoryFilter = () => {
 							<ClickAwayListener onClickAway={handleClose}>
 								<MenuList autoFocusItem={open} id='menu-list-grow' onKeyDown={handleListKeyDown} className={classes.customWidth}>
 									{filterValues.map((filterValue) => (
-										<MenuItem selected={filterValue === filterState} key={getTokenKey()} onClick={() => onFilterChange(filterValue)}>
+										<MenuItem selected={filterValue === filter} key={getTokenKey()} onClick={() => onFilterChange(filterValue)}>
 											{filterValue}
 										</MenuItem>
 									))}
